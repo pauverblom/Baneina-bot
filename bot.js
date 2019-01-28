@@ -55,4 +55,4 @@ if (msg.content === '!Unexist'){
 client.on('guildMemberAdd', member => {
   channel.send(`Welcome to this fucking piece of shit, ${member}`);
 });
-client.login('NTM5MTQ4NDQyMTQ5MzIyNzYz.Dy-Q-g.D83sXxPVbzDIkIAdTrMf7kWKGBE');
+client.login('process.env.BOT_TOKEN');
