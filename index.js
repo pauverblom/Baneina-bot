@@ -108,11 +108,9 @@ if (message.content === '!Unexist'){
                   }
       
     }
-if (message.content.startsWith('!avatar')) {
+if (message.content.startsWith('!Avatar')) {
     const user = message.mentions.users.first();
     const embed = new MessageEmbed()
-        .setColor(0x333333)
-        .setAuthor(user.username)
         .setImage(user.avatarURL);
     message.channel.send(embed);
         }
