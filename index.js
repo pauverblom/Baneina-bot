@@ -107,9 +107,9 @@ if (message.content === '!Unexist'){
                   }
       
     }
-if (message.content === '!Avatar') {
-	var user = message.mentions.users;
-	message.reply(user);
+if (!message.content.startsWith('!Avatar')) {
+	const taggedUser = message.mentions.users.first();
+	message.channel.send(`You wanted to kick: ${taggedUser.username}`);
 }
  
   
