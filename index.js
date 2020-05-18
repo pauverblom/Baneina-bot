@@ -117,6 +117,7 @@ if (message.content.startsWith('!Avatar')) {
       .setColor(0xff0000)
       // Set the main content of the embed
       .setDescription('Hello, this is a slick embed!');
+	message.channel.send(embed);
         }
  
   
