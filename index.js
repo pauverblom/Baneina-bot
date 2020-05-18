@@ -49,7 +49,7 @@ client.on('ready', () => {
 client.on('message', msg => {
   
   if (msg.content === '!OOF'){
-    msg.reply('Whoah! You just commited die! prueba');
+    msg.reply('Whoah! You just commited die!');
   }
 if (msg.content === '!Exist'){
         Existence = Existence + 1;
@@ -118,7 +118,7 @@ if (msg.content === '!Unexist'){
 	
   if (msg.content === '!UA') {
     var member = msg.mentions.members.first();
-    msg.reply('ok')
+    msg.reply('ok');
   }
   
   if (msg.attachments.size > 0) {
