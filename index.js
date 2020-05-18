@@ -107,7 +107,7 @@ if (message.content === '!Unexist'){
                   }
       
     }
-if (message.content.startsWith('!avatar') {
+if (message.content.startsWith('!avatar')) {
     var user = message.mentions.users.first();
     message.send(user)
         }
