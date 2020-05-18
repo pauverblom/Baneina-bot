@@ -8,7 +8,7 @@ const express = require('express');
 const app = express();
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { Client, MessageEmbed } = require('discord.js');
+
 
 
 
@@ -110,7 +110,7 @@ if (message.content === '!Unexist'){
     }
 if (message.content.startsWith('!Avatar')) {
     var user = message.mentions.users.first();
-    let embed = new Discord.RichEmbed()
+    let embed = Discord.MessageEmbed();
         .setImage(user.avatarURL);
     message.channel.send(embed);
         }
