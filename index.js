@@ -46,93 +46,91 @@ client.on('ready', () => {
 //si se envia mensaje
 
 
-client.on('message', msg => {
+client.on('message', message => {
   
-  if (msg.content === '!OOF'){
-    msg.reply('Whoah! You just commited die!');
+  if (message.content === '!OOF'){
+    message.reply('Whoah! You just commited die!');
   }
-if (msg.content === '!Exist'){
+if (message.content === '!Exist'){
         Existence = Existence + 1;
 	
 	if (Existence == 1)
 	{
-		msg.reply('Whoah! You exist! ' + Existence + ' person exists!');
+		message.reply('Whoah! You exist! ' + Existence + ' person exists!');
 	}
 
 	if (Existence > 1)
 	{
-		msg.reply('Whoah! You exist! ' + Existence + ' people exist!');
+		message.reply('Whoah! You exist! ' + Existence + ' people exist!');
 	}
   }
-if (msg.content === '!Unexist'){
+if (message.content === '!Unexist'){
 	if (Existence > 0){Existence = Existence - 1;}
 
 	if (Existence == 1)
 	{
-		msg.reply('You commited sewer side! You unexisted! ' + Existence + ' person exists! '+'Congrats! '+'You are the only survivor!');
+		message.reply('You commited sewer side! You unexisted! ' + Existence + ' person exists! '+'Congrats! '+'You are the only survivor!');
 	}
 	if (Existence > 1)
 	{
-		msg.reply('You commited sewer side! You unexisted! ' + Existence + ' people exist!');
+		message.reply('You commited sewer side! You unexisted! ' + Existence + ' people exist!');
 	}
 	if (Existence == 0)
 	{
-		msg.reply('You commited sewer side! '+'You unexisted! '+'No-one exists. '+'This is so sad.');
+		message.reply('You commited sewer side! '+'You unexisted! '+'No-one exists. '+'This is so sad.');
   }
 }
-  if (msg.content === '!Meme') {
+  if (message.content === '!Meme') {
     var number1 = 6
     var random = Math.floor(Math.random() * 6) + 1
     switch (random) {
-      case 1: msg.reply('Sopa do macaco uma delicia kkkk'); break;
-      case 2: msg.reply("It ain't much but it's honest work"); break;
-      case 3: msg.reply("Watch out!! Oh no, he has airpods on, he can't hear us!! OMG"); break;
-      case 4: msg.reply("Carefully. He's a hero"); break;
-      case 5: msg.reply("Ahh. I see you're a man of culture as well"); break;
-      case 6: msg.reply("Wait... IS THIS?!?  |  | |  | |  |_"); break;
+      case 1: message.reply('Sopa do macaco uma delicia kkkk'); break;
+      case 2: message.reply("It ain't much but it's honest work"); break;
+      case 3: message.reply("Watch out!! Oh no, he has airpods on, he can't hear us!! OMG"); break;
+      case 4: message.reply("Carefully. He's a hero"); break;
+      case 5: message.reply("Ahh. I see you're a man of culture as well"); break;
+      case 6: message.reply("Wait... IS THIS?!?  |  | |  | |  |_"); break;
       
                   }
   }
   
-  if (msg.content === '!Subscribe') {
-   msg.reply("SUBSCRIBE TO MY CHANNEL https://www.youtube.com/channel/UCHDfM2CVCqRR5XhncqNgcuw?sub_confirmation=1")
+  if (message.content === '!Subscribe') {
+   message.reply("SUBSCRIBE TO MY CHANNEL https://www.youtube.com/channel/UCHDfM2CVCqRR5XhncqNgcuw?sub_confirmation=1")
   }    
-  if (msg.content === '!Bitchlasagna'){
-    msg.reply('DO YOUR PART! '+' https://www.youtube.com/watch?v=6Dh-RL__uN4');
+  if (message.content === '!Bitchlasagna'){
+    message.reply('DO YOUR PART! '+' https://www.youtube.com/watch?v=6Dh-RL__uN4');
   }
-    if (msg.content === '!Cykablyat') {
+    if (message.content === '!Cykablyat') {
     var number2 = 5
     var random = Math.floor(Math.random() * 5) + 1
     switch (random) {
-      case 1: msg.reply('Stay Cheeki Breeki Comrade'); break;
-      case 2: msg.reply("https://www.youtube.com/watch?v=OUHVRWdVQCI"); break;
-      case 3: msg.reply("https://www.youtube.com/watch?v=U06jlgpMtQs"); break;
-        case 4: msg.reply("https://cdn.discordapp.com/attachments/539112946509545475/554747539279314954/c05b9da.jpg"); break;
-        case 5: msg.reply("https://cdn.discordapp.com/attachments/539112946509545475/554747539279314955/22e6d09.png"); break;
+      case 1: message.reply('Stay Cheeki Breeki Comrade'); break;
+      case 2: message.reply("https://www.youtube.com/watch?v=OUHVRWdVQCI"); break;
+      case 3: message.reply("https://www.youtube.com/watch?v=U06jlgpMtQs"); break;
+        case 4: message.reply("https://cdn.discordapp.com/attachments/539112946509545475/554747539279314954/c05b9da.jpg"); break;
+        case 5: message.reply("https://cdn.discordapp.com/attachments/539112946509545475/554747539279314955/22e6d09.png"); break;
                   }
       
     }
-  if (msg.content === '!Avatar'){
-   msg.reply(msg.author.avatarURL);
+  if (message.content === '!Avatar'){
+   message.reply(message.author.avatarURL);
   }
 	
-    if (msg.content === '!avatar') {
-      // Remove the "var" line; it isn't necessary.
-      let embed = new Discord.RichEmbed()
-      var member = msg.mentions.members.first();
-      // Replace "message.member" with "message.author"
-    .setImage(member.avatarURL)
-    .setColor('#275BF0')
-      msg.channel.send(embed)
-    }
+  if (message.content === '!UA') {
+    var member = message.mentions.members.first();
+    let embed = new Discord.RichEmbed()
+  .setImage(member.avatarURL)
+  .setColor('#275BF0')
+    message.channel.send(embed)
+  }
  
   
-  if (msg.attachments.size > 0) {
-    if (msg.attachments.every(attachIsImage)){
+  if (message.attachments.size > 0) {
+    if (message.attachments.every(attachIsImage)){
       
-    let member = msg.member;
+    let member = message.member;
     
-    let imagememer = msg.guild.roles.find(role => role.name === "Image memer");
+    let imagememer = message.guild.roles.find(role => role.name === "Image memer");
     
      member.addRole(imagememer);    
     }
