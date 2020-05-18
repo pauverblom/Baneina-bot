@@ -117,9 +117,9 @@ if (msg.content === '!Unexist'){
   }
 	
   if (msg.content === '!UA') {
-    var member= msg.mentions.members.first();
+    var member = msg.mentions.members.first();
     let embed = new Discord.RichEmbed()
-  .setImage(msg.member.avatarURL)
+  .setImage(member.avatarURL)
   .setColor('#275BF0')
     msg.channel.send(embed)
   }
