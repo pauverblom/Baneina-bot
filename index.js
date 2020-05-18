@@ -109,7 +109,11 @@ if (message.content === '!Unexist'){
     }
 if (message.content.startsWith('!avatar')) {
     const user = message.mentions.users.first();
-    message.reply(user + "es a quien has etiquetado")
+    const avatarEmbed = new Discord.RichEmbed()
+        .setColor(0x333333)
+        .setAuthor(user.username)
+        .setImage(user.avatarURL);
+    message.channel.send(avatarEmbed);
         }
  
   
