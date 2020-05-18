@@ -113,13 +113,10 @@ if (message.content.startsWith('!Avatar')) {
     const embed = new Discord.MessageEmbed()
     
       // Set the title of the field
-      .setTitle('A slick little embed')
+      .setTitle(user+"'"+"s Avatar")
     
-      .setImage(user.avatarURL)
-      // Set the color of the embed
-      .setColor(0xff0000)
-      // Set the main content of the embed
-      .setDescription('Hello, this is a slick embed!');
+      .setImage(message.member.avatarURL))
+
 	message.channel.send(embed);
         }
  
