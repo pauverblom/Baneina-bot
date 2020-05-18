@@ -116,12 +116,12 @@ if (msg.content === '!Unexist'){
    msg.reply(msg.author.avatarURL);
   }
 	
-    if (msg.content === '!UA') {
+    if (msg.content === '!avatar') {
       // Remove the "var" line; it isn't necessary.
       let embed = new Discord.RichEmbed()
       var member = msg.mentions.members.first();
       // Replace "message.member" with "message.author"
-    .setImage(msg.member.avatarURL)
+    .setImage(member.avatarURL)
     .setColor('#275BF0')
       msg.channel.send(embed)
     }
