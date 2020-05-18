@@ -111,8 +111,11 @@ if (message.content === '!Unexist'){
 if (message.content.startsWith('!Avatar')) {
     var user = message.mentions.users.first();
     const embed = new Discord.MessageEmbed()
+    
       // Set the title of the field
       .setTitle('A slick little embed')
+    
+      .setImage(user.avatarURL)
       // Set the color of the embed
       .setColor(0xff0000)
       // Set the main content of the embed
