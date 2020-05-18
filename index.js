@@ -115,13 +115,14 @@ if (msg.content === '!Unexist'){
   if (msg.content === '!Avatar'){
    msg.reply(msg.author.avatarURL);
   }
-  if (msg.content === '!UserAvatar') {
-    var member = message.mentions.first()
-    let embed = new Discord.RichEmbed()
-  .setImage(member.avatarURL)
-  .setColor('#275BF0')
-    message.channel.send(embed)
-  }
+    if (msg.content === '!AvatarUser') {
+      // Remove the "var" line; it isn't necessary.
+      let embed = new Discord.RichEmbed()
+      // Replace "message.member" with "message.author"
+    .setImage(message.author.avatarURL)
+    .setColor('#275BF0')
+      message.channel.send(embed)
+    }
   
   if (msg.attachments.size > 0) {
     if (msg.attachments.every(attachIsImage)){
