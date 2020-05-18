@@ -110,9 +110,13 @@ if (message.content === '!Unexist'){
     }
 if (message.content.startsWith('!Avatar')) {
     var user = message.mentions.users.first();
-    let embed = Discord.MessageEmbed();
-        .setImage(user.avatarURL);
-    message.channel.send(embed);
+    const embed = new Discord.MessageEmbed()
+      // Set the title of the field
+      .setTitle('A slick little embed')
+      // Set the color of the embed
+      .setColor(0xff0000)
+      // Set the main content of the embed
+      .setDescription('Hello, this is a slick embed!');
         }
  
   
