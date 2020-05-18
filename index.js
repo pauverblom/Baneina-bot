@@ -107,7 +107,7 @@ if (message.content === '!Unexist'){
                   }
       
     }
-if (message.content === '!avatar') {
+if (message.content.startsWith('!avatar') {
         let Embed = new MessageEmbed()
         let roles = []
         if(!message.mentions.users.first()){
