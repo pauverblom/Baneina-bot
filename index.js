@@ -115,7 +115,7 @@ if (msg.content === '!Unexist'){
   if (msg.content === '!Avatar'){
    msg.reply(msg.author.avatarURL);
   }
-  if (message.content === '!avatar') {
+  if (msg.content === '!UserAvatar') {
     var member = message.mentions.first()
     let embed = new Discord.RichEmbed()
   .setImage(member.avatarURL)
