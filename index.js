@@ -118,7 +118,7 @@ if (msg.content === '!Unexist'){
 	
   if (msg.content === '!UA') {
     var member = msg.mentions.members.first();
-    msg.reply("ok" + member)
+    msg.reply('ok')
   }
   
   if (msg.attachments.size > 0) {
