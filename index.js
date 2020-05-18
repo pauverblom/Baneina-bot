@@ -108,8 +108,8 @@ if (message.content === '!Unexist'){
       
     }
 if (message.content.startsWith('!avatar')) {
-    var user = message.mentions.users.first();
-    message.reply(user)
+    const user = message.mentions.users.first();
+    message.reply(user + "es a quien has etiquetado")
         }
  
   
