@@ -110,8 +110,7 @@ if (message.content === '!Unexist'){
     }
 if (message.content.startsWith('!Avatar')) {
     var user = message.mentions.users.first();
-	console.log(user);
-    let embed = new MessageEmbed();
+    let embed = new Discord.RichEmbed()
         .setImage(user.avatarURL);
     message.channel.send(embed);
         }
