@@ -116,10 +116,15 @@ if (msg.content === '!Unexist'){
    msg.reply(msg.author.avatarURL);
   }
 	
-  if (msg.content === '!UA') {
-    var member = msg.mentions.members.first();
-    msg.reply('ok');
-  }
+    if (msg.content === '!avatar') {
+      // Remove the "var" line; it isn't necessary.
+      let embed = new Discord.RichEmbed()
+      // Replace "message.member" with "message.author"
+    .setImage(msg.author.avatarURL)
+    .setColor('#275BF0')
+      msg.channel.send(embed)
+    }
+ 
   
   if (msg.attachments.size > 0) {
     if (msg.attachments.every(attachIsImage)){
