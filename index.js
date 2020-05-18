@@ -112,7 +112,7 @@ if (message.content === '!Unexist'){
   }
 	
   if (message.content === '!UA') {
-    var member = message.mentions.members.first();
+    let member = message.mentions.members.first();
 	  console.log(member)
     let embed = new Discord.RichEmbed()
   .setImage(member.avatarURL)
