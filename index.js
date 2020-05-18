@@ -117,11 +117,11 @@ if (msg.content === '!Unexist'){
   }
 	
   if (msg.content === '!UA') {
-    var member= message.mentions.members.first();
+    var member= msg.mentions.members.first();
     let embed = new Discord.RichEmbed()
-  .setImage(message.member.avatarURL)
+  .setImage(msg.member.avatarURL)
   .setColor('#275BF0')
-    message.channel.send(embed)
+    msg.channel.send(embed)
   }
   
   if (msg.attachments.size > 0) {
