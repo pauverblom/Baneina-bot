@@ -49,7 +49,7 @@ client.on('ready', () => {
 client.on('message', msg => {
   
   if (msg.content === '!OOF'){
-    msg.reply('Whoah! You just commited die!');
+    msg.reply('Whoah! You just commited die! prueba');
   }
 if (msg.content === '!Exist'){
         Existence = Existence + 1;
