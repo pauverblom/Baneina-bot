@@ -115,7 +115,7 @@ if (message.content.startsWith('!Avatar')) {
       // Set the title of the field
       .setTitle(user+"'"+"s Avatar")
     
-      .setImage(message.member.avatarURL))
+      .setImage(message.member.avatarURL)
 
 	message.channel.send(embed);
         }
