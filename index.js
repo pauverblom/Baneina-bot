@@ -109,12 +109,12 @@ if (message.content === '!Unexist'){
       
     }
 if (message.content.startsWith('!Avatar')) {
+    var user = message.mentions.users.first();
+    let embed = new Discord.RichEmbed()
+    .setImage(user.displayAvatarURL)
+    .setColor('#275BF0')
+    message.channel.send(embed)
 
-      // Set the title of the field
-const avatarList = message.mentions.users.map(user => {
-		return `${user.username}'s avatar: <${user.displayAvatarURL({ format: "png", dynamic: true })}>`;
-	});
-		message.channel.send(avatarList);
 
         }
  
