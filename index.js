@@ -109,10 +109,17 @@ if (message.content === '!Unexist'){
       
     }
 if (message.content.startsWith('!Avatar')) {
+	if (!message.mentions.users.size) {
+	const embed1 = new Discord.MessageEmbed()
+    .setImage(message.author.displayAvatarURL())
+    message.channel.send(embed1);	
+	}
+	else{
     var user = message.mentions.users.first();
-    const embed = new Discord.MessageEmbed()
+    const embed2 = new Discord.MessageEmbed()
     .setImage(user.displayAvatarURL())
-    message.channel.send(embed);
+    message.channel.send(embed2);
+	}
 
 
         }
