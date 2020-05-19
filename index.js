@@ -111,7 +111,7 @@ if (message.content === '!Unexist'){
 if (message.content.startsWith('!Avatar')) {
     var user = message.mentions.users.first();
     let embed = new Discord.MessageEmbed()
-    .setImage(user.displayAvatarURL)
+    .setImage(message.author.displayAvatarURL)
     .setColor('#275BF0')
     message.channel.send(embed)
 
