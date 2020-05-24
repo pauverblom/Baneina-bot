@@ -138,13 +138,10 @@ if (message.content.startsWith('!Avatar')) {
 
 
 });
-client.on('guildMemberAdd', member => {
-    member.guild.channels.get("552852895704547328").send("Hello, "+member+". Make sure to subscribe to my channel if you aren't already! https://www.youtube.com/channel/UCHDfM2CVCqRR5XhncqNgcuw?sub_confirmation=1"); 
-   
-  
-let lvl1 = member.guild.roles.find(role => role.name === "Lvl 1 Crook");
-  
-  member.addRole(lvl1);
+
+client.on('guildMemberAdd', (guildMember) => {
+   guildMember.addRole(guildMember.guild.roles.find(role => role.name === "Lvl 1 Crook"));
+}
   
   
 });
