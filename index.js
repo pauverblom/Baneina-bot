@@ -140,7 +140,7 @@ if (message.content.startsWith('!Avatar')) {
 });
 
 client.on('guildMemberAdd', (guildMember) => {
-   guildMember.addRole(guildMember.guild.roles.find(role => role.name === "Lvl 1 crook"));
+   guildMember.roles.add(guildMember.guild.roles.find(role => role.name === "Lvl 1 crook"));
 });
 
 client.login(process.env.TOKEN);
