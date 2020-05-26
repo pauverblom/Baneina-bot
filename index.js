@@ -142,6 +142,11 @@ if (message.content.startsWith('!Avatar')) {
 client.on('guildMemberAdd', (guildMember) => {
   var role = guildMember.guild.roles.cache.find(role => role.name === 'Lvl 1 Crook');
   guildMember.roles.add(role)
+ const channel = guildMember.guild.channels.cache.find(ch => ch.name === 'greeting-channel');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`Welcome to the server, ${guildMember} Make sure to subscribe to my channel! (if you aren't already) https://www.youtube.com/c/baneina`);
 });
 
 client.login(process.env.TOKEN);
