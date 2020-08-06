@@ -132,7 +132,7 @@ if (message.content.startsWith('!Avatar')) {
     
     let imagememer = message.guild.roles.cache.find(role => role.name === "Image memer");
     
-     member.addRole(imagememer);    
+     member.roles.add(imagememer);    
     }
   }
 
