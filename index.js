@@ -161,7 +161,7 @@ if (message.content.startsWith('!Avatar')) {
     
      member.roles.add(imagememer);    
     }
-});
+};
 
 client.on('guildMemberAdd', (guildMember) => {
   var role = guildMember.guild.roles.cache.find(role => role.name === 'Lvl 1 Crook');
