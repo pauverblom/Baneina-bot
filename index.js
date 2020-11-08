@@ -106,8 +106,13 @@ if (message.content === '!Unexist'){
         case 4: message.reply("https://cdn.discordapp.com/attachments/539112946509545475/554747539279314954/c05b9da.jpg"); break;
         case 5: message.reply("https://cdn.discordapp.com/attachments/539112946509545475/554747539279314955/22e6d09.png"); break;
                   }
-      
+   if (message.content === '!Role') {
+	   let member = message.member;
+	   var highestrole = member.roles.highest;
+	   message.reply('Your current role is:' + highestrole)
     }
+	    
+	    
 if (message.content.startsWith('!Avatar')) {
 	if (!message.mentions.users.size) {
 	const embed1 = new Discord.MessageEmbed()
