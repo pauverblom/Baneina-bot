@@ -129,7 +129,7 @@ if (message.content === '!Unexist'){
 	    
    if (message.content === '!Role') {
 	   let member = message.member;
-	   var highestrole = member.roles.highest;
+	   var highestrole = member.roles.highest.name;
 	   message.reply('Your current role is:' + highestrole);
     }
 	    
