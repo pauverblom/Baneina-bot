@@ -161,9 +161,6 @@ if (message.content.startsWith('!Avatar')) {
     
      member.roles.add(imagememer);    
     }
-  }
-
-
 });
 
 client.on('guildMemberAdd', (guildMember) => {
