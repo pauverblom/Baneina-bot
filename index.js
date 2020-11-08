@@ -47,6 +47,9 @@ client.on('message', message => {
   if (message.content === '!OOF'){
     message.reply('Whoah! You just commited die!');
   }
+	
+	
+	
 if (message.content === '!Exist'){
         Existence = Existence + 1;
 	
@@ -60,6 +63,9 @@ if (message.content === '!Exist'){
 		message.reply('Whoah! You exist! ' + Existence + ' people exist!');
 	}
   }
+	
+	
+	
 if (message.content === '!Unexist'){
 	if (Existence > 0){Existence = Existence - 1;}
 
@@ -76,6 +82,9 @@ if (message.content === '!Unexist'){
 		message.reply('You commited sewer side! '+'You unexisted! '+'No-one exists. '+'This is so sad.');
   }
 }
+	
+	
+	
   if (message.content === '!Meme') {
     var number1 = 6
     var random = Math.floor(Math.random() * 6) + 1
@@ -89,13 +98,22 @@ if (message.content === '!Unexist'){
       
                   }
   }
+	
+	
+	
   
   if (message.content === '!Subscribe') {
    message.reply("SUBSCRIBE TO MY CHANNEL https://www.youtube.com/channel/UCHDfM2CVCqRR5XhncqNgcuw?sub_confirmation=1")
-  }    
+  }   
+	
+	
+	
   if (message.content === '!Bitchlasagna'){
     message.reply('DO YOUR PART! '+' https://www.youtube.com/watch?v=6Dh-RL__uN4');
   }
+	
+	
+	
     if (message.content === '!Cykablyat') {
     var number2 = 5
     var random = Math.floor(Math.random() * 5) + 1
@@ -106,12 +124,16 @@ if (message.content === '!Unexist'){
         case 4: message.reply("https://cdn.discordapp.com/attachments/539112946509545475/554747539279314954/c05b9da.jpg"); break;
         case 5: message.reply("https://cdn.discordapp.com/attachments/539112946509545475/554747539279314955/22e6d09.png"); break;
                   }
+	    
+	    
+	    
    if (message.content === '!Role') {
 	   let member = message.member;
 	   var highestrole = member.roles.highest;
-	   message.reply('Your current role is:')
+	   message.reply('Your current role is:' + highestrole);
     }
 	    
+	  
 	    
 if (message.content.startsWith('!Avatar')) {
 	if (!message.mentions.users.size) {
@@ -125,11 +147,11 @@ if (message.content.startsWith('!Avatar')) {
     .setImage(user.displayAvatarURL())
     message.channel.send(embed2);
 	}
-
-
-        }
+ }
  
   
+	    
+	    
   if (message.attachments.size > 0) {
     if (message.attachments.every(attachIsImage)){
       
