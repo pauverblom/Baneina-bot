@@ -166,9 +166,9 @@ if (message.content.startsWith('!Avatar')) {
 
 client.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find(ch => ch.name === 'greeting-channel');
+  const channel = member.guild.channels.find(ch => ch.name === "greeting-channel");
   // Send the message, mentioning the member
-  channel.send(`Welcome to the server, ${member}`).catch(console.error);
+  channel.send(`Welcome to the server, ${member}`);
 });	
 
 
