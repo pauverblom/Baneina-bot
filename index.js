@@ -167,7 +167,7 @@ if (message.content === "Am I God?") {
 if (message.content === "!FeelingLucky") {
   var member = message.member;
   let feelinglucky = message.guild.roles.cache.find((role) => role.name === "Feeling Lucky!");
-	if (Math.random() > 0) {
+	if (Math.random() > 0.99) {
     	message.reply("You got lucky!!");
 		member.roles.add(feelinglucky);
 	} else {
@@ -179,7 +179,7 @@ if (message.content === "!FeelingLucky") {
 }		
 	
 	//Give image memer role
-  if (message.attachments.size > 0.99) {
+  if (message.attachments.size > 0) {
     if (message.attachments.every(attachIsImage)) {
       let member = message.member;
 
