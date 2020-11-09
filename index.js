@@ -162,21 +162,26 @@ if (message.content === "Am I God?") {
     message.reply("Nahh, bro. You're a loser.");
   }
 }	
-	
-	
-if (message.content === "!FeelingLucky") {
+	//!FeelingLucky	
+if (message.content === '!FeelingLucky') {
   var member = message.member;
-  let feelinglucky = message.guild.roles.cache.find((role) => role.name === "Feeling Lucky!");
-	if (Math.random() > 0.99) {
-    	message.reply("You got lucky!!");
-		member.roles.add(feelinglucky);
-	} else {
-    	message.reply("You didn't get lucky :(  byee!");
-		setTimeout(function(){ 
-			member.kick();
-	}, 3000);
+  var highestrole = message.member.roles.highest.name;
+  let feelinglucky = message.guild.roles.cache.find((role) => role.name === 'Feeling Lucky!');
+
+  if (highestrole != 'Baneina') {
+    if (Math.random() > 0.99) {
+      message.reply('You got lucky!!');
+      member.roles.add(feelinglucky);
+    } else {
+      message.reply("You didn't get lucky :(  byee!");
+      setTimeout(function () {
+        member.kick();
+      }, 3000);
+    }
+  } else {
+    message.reply('You already are the admin, boss');
   }
-}		
+}	
 	
 	//Give image memer role
   if (message.attachments.size > 0) {
