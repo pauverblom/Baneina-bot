@@ -145,18 +145,24 @@ client.on("message", (message) => {
 	//!Avatar
   if (message.content.startsWith("!Avatar")) {
     if (!message.mentions.users.size) {
-      const embed1 = new Discord.MessageEmbed().setImage(
-        message.author.displayAvatarURL()
-      );
+      const embed1 = new Discord.MessageEmbed().setImage(message.author.displayAvatarURL());
       message.channel.send(embed1);
     } else {
       var user = message.mentions.users.first();
-      const embed2 = new Discord.MessageEmbed().setImage(
-        user.displayAvatarURL()
-      );
+      const embed2 = new Discord.MessageEmbed().setImage(user.displayAvatarURL());
       message.channel.send(embed2);
     }
   }
+	
+if (message.content === "Am I God?") {
+  var highestrole = message.member.roles.highest.name;
+  if (highestrole === "Baneina") {
+    message.reply("Yes, you are, my lord");
+  } else {
+    message.reply("Nahh, bro. You're a loser.");
+  }
+}	
+	
 	//Give image memer role
   if (message.attachments.size > 0) {
     if (message.attachments.every(attachIsImage)) {
