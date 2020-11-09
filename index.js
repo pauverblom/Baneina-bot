@@ -195,10 +195,10 @@ if (message.content === '!FeelingLucky') {
   }
 });
 	//Welcoming and role giving
-client.on("guildMemberAdd", (member) => {
-  var role = member.guild.roles.cache.find((role) => role.name === "Lvl 1 Crook");
-  member.roles.add(role);
-  const channel = member.guild.channels.cache.find((ch) => ch.name === "greeting-channel");
+client.on('guildMemberAdd', member => {
+  var role = member.guild.roles.cache.find(role => role.name === 'Lvl 1 Crook');
+  member.roles.add(role)
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'greeting-channel');
   if (!channel) return;
   channel.send(`Welcome to the server, ${member} Make sure to subscribe to my channel! (if you aren't already) https://www.youtube.com/c/baneina`);
 });
