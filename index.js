@@ -166,10 +166,15 @@ if (message.content === "Am I God?") {
 	
 if (message.content === "!FeelingLucky") {
   var member = message.member;
-	if (Math.random() > 0.99) {
+  let feelinglucky = message.guild.roles.cache.find((role) => role.name === "Feeling Lucky!");
+	if (Math.random() > 0) {
     	message.reply("You got lucky!!");
+		member.roles.add(feelinglucky);
 	} else {
-    	message.reply("You didn't get lucky :(");
+    	message.reply("You didn't get lucky :(  byee!");
+		setTimeout(function(){ 
+			member.kick();
+	}, 3000);
   }
 }		
 	
@@ -178,10 +183,7 @@ if (message.content === "!FeelingLucky") {
     if (message.attachments.every(attachIsImage)) {
       let member = message.member;
 
-      let imagememer = message.guild.roles.cache.find(
-        (role) => role.name === "Image memer"
-      );
-
+      let imagememer = message.guild.roles.cache.find((role) => role.name === "Image memer");
       member.roles.add(imagememer);
     }
   }
