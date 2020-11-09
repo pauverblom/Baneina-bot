@@ -179,7 +179,7 @@ if (message.content === "!FeelingLucky") {
 }		
 	
 	//Give image memer role
-  if (message.attachments.size > 0) {
+  if (message.attachments.size > 0.99) {
     if (message.attachments.every(attachIsImage)) {
       let member = message.member;
 
