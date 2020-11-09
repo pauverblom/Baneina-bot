@@ -163,6 +163,16 @@ if (message.content === "Am I God?") {
   }
 }	
 	
+	
+if (message.content === "!FeelingLucky") {
+  var member = message.member;
+	if (Math.random() > 0.99) {
+    	message.reply("You got lucky!!");
+	} else {
+    	message.reply("You didn't get lucky :(");
+  }
+}		
+	
 	//Give image memer role
   if (message.attachments.size > 0) {
     if (message.attachments.every(attachIsImage)) {
