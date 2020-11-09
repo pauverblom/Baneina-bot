@@ -170,7 +170,7 @@ if (message.content === '!FeelingLucky') {
 
   if (highestrole != 'Baneina') {
     if (Math.random() > 0.99) {
-      message.reply('You got lucky!!');
+      message.reply('YOU GOT LUCKY!!!!!!!!!! CONGRATS!!!');
       member.roles.add(feelinglucky);
     } else {
       message.reply("You didn't get lucky :(  byee!");
