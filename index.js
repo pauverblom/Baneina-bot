@@ -176,7 +176,7 @@ if (message.content === '!FeelingLucky') {
       message.reply("You didn't get lucky :(  byee!");
       setTimeout(function () {
         member.kick();
-	      message.reply(member + "was kicked :(")
+	      message.reply("was kicked :(")
       }, 3000);
     }
   } else {
