@@ -207,7 +207,7 @@ client.on('guildMemberRemove', member => {
 const channel = member.guild.channels.cache.find(ch => ch.name === 'dock-of-shame');
   if (!channel) return;
   channel.send(`${member} has been eliminated and sent to the dock of shame https://i.postimg.cc/qMB7Vxnv/Dock-of-shame.jpg`);
-}
+}};
 
 client.login(process.env.TOKEN);
   
