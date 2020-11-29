@@ -210,7 +210,7 @@ const channel = member.guild.channels.cache.find(ch => ch.name === 'dock-of-sham
 	const embed = new Discord.MessageEmbed()
 	.setColor('#FF0000')
 	.setTitle('Dock of Shame')
-	.setDescription('${member} has been eliminated and sent to the dock of shame')
+	.setDescription(`<@!${member}> has been eliminated and sent to the dock of shame`)
 	.setImage('https://i.postimg.cc/qMB7Vxnv/Dock-of-shame.jpg')
 	
   channel.send(embed);
