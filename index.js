@@ -155,8 +155,8 @@ client.on("message", (message) => {
   }
 	
 if (message.content === "!Members") {
-	var members = guild.members.cache.filter(member => !member.user.bot).size;
-	message.channnel.send('There are ' + members + ' users in the server.' )
+	var members = message.guild.members.cache.filter(member => !member.user.bot).size;
+	message.channnel.send('There are ' + members + ' members in the server.' )
 }
 	
 if (message.content === "Am I God?") {
