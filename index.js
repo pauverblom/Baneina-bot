@@ -154,6 +154,11 @@ client.on("message", (message) => {
     }
   }
 	
+if (message.content === "!Members") {
+	var members = guild.members.cache.filter(member => !member.user.bot).size;
+	message.channnel.send('There are ' + members + ' users in the server.' )
+}
+	
 if (message.content === "Am I God?") {
   var highestrole = message.member.roles.highest.name;
   if (highestrole === "Baneina") {
