@@ -191,7 +191,7 @@ if (message.content === '!FeelingLucky') {
 }
 		
 
-if (message.isNumeric()){
+if (isNumeric()){
      	if (message.channel.id === 'counting') {
 		message.reply('This channel is for counting');		
   }
