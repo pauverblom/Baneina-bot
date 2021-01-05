@@ -191,11 +191,15 @@ if (message.content === '!FeelingLucky') {
 }
 		
 
-if (message.content = isNaN) {
+if (message.isNumber()){
      	if (message.channel.id === 'counting') {
 		message.reply('This channel is for counting');		
   }
 }
+	
+String.prototype.isNumber = function() {
+return /^\d+$/.test(this);
+};
 	
 	//Give image memer role
   if (message.attachments.size > 0) {
