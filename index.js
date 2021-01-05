@@ -190,9 +190,11 @@ if (message.content === '!FeelingLucky') {
   }
 }
 	
-if (isNaN(message.content)) return;
-else {
-  console.log('si')
+if (isNaN(message.content)) {
+  if (message.channel.id === 'counting')
+{
+ message.reply('This channel is exclusively for counting')
+}
 }
 	
 	//Give image memer role
