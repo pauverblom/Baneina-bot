@@ -190,8 +190,7 @@ if (message.content === '!FeelingLucky') {
   }
 }
 	
-if (isNaN(message.content) return;
-else {
+if (isNaN(message.content) {
   console.log('si')
 }
 	
