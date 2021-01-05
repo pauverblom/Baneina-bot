@@ -191,11 +191,12 @@ if (message.content === '!FeelingLucky') {
 }
 
 	
-     if (isNaN(message.content)) {
-	     if (message.channel.id === 'counting'){
+    if (isNaN(message.content)) {
+	     if (message.channel.name === 'counting'){
 	     	message.delete(1000);
 	     }
 }
+	
 	
 	//Give image memer role
   if (message.attachments.size > 0) {
