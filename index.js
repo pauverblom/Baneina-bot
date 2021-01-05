@@ -192,7 +192,7 @@ if (message.content === '!FeelingLucky') {
 		
 
 if (message.content = isNaN) {
-     	if (msg.channel.id === 'counting') {
+     	if (message.channel.id === 'counting') {
 		message.reply('This channel is for counting');		
   }
 }
