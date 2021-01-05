@@ -194,6 +194,7 @@ if (message.content === '!FeelingLucky') {
     if (isNaN(message.content)) {
 	     if (message.channel.name === 'counting'){
 	     	message.delete();
+		message.author.send("The counting channel is exclusively for counting.")
 	     }
 }
 	
