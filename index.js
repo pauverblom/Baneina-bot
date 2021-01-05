@@ -193,7 +193,7 @@ if (message.content === '!FeelingLucky') {
 	
     if (isNaN(message.content)) {
 	     if (message.channel.name === 'counting'){
-	     	message.delete({ timeout: 5000 });
+	     	message.delete();
 	     }
 }
 	
