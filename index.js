@@ -190,11 +190,9 @@ if (message.content === '!FeelingLucky') {
   }
 }
 		
-
-if (message.channel.id === 'probar-bot'){
-	if (message.content = /^\d+$/.test(val))
-	{
-		message.reply('You already are the admin, boss');
+if (message.content = /^\d+$/.test(val)) {
+	if (message.channel.id === 'counting') {
+		console.log('it is');
 	}
 }
 	
