@@ -28,6 +28,7 @@ client.on("message", (message) => {
   if (message.content === "!OOF") {
     message.reply("Whoah! You just commited die!");
   }
+
 	//!Exist
   if (message.content === "!Exist") {
     Existence = Existence + 1;
@@ -187,7 +188,13 @@ if (message.content === '!FeelingLucky') {
   } else {
     message.reply('You already are the admin, boss');
   }
-}	
+}
+		
+
+	if (message.content = isNaN) {
+     		if (msg.channel.id === 'counting') {
+			message.reply('This channel is for counting');		
+  }
 	
 	//Give image memer role
   if (message.attachments.size > 0) {
