@@ -191,7 +191,7 @@ if (message.content === '!FeelingLucky') {
 }
 		
 
-if (message.content isNumeric()){
+if (message.content === isNumeric()){
      	if (message.channel.id === 'probar-bot') {
 		message.reply('This channel is for counting');		
   }
