@@ -192,9 +192,9 @@ if (message.content === '!FeelingLucky') {
 
 	
      if (isNaN(message.content)) {
-	     if (message.author != 'baneina''''s slave')
- message.reply('This channel is exclusively for counting');
-console.log('ha enviado caca');
+	     if (message.channel.id === 'counting'){
+	     	message.delete(1000);
+	     }
 }
 	
 	//Give image memer role
