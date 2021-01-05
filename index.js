@@ -189,10 +189,9 @@ if (message.content === '!FeelingLucky') {
     message.reply('You already are the admin, boss');
   }
 }
-if (message.content = /^\d+$/.test(message)) {
-	if (message.channel.id === 'counting')	{
+	
+if (message.content === /^\d+$/.test(message)) {
 		console.log('it is');
-	}
 }
 	
 	//Give image memer role
