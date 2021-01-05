@@ -191,10 +191,11 @@ if (message.content === '!FeelingLucky') {
 }
 		
 
-if (message.content === isNumeric()){
-     	if (message.channel.id === 'probar-bot') {
-		message.reply('This channel is for counting');		
-  }
+if (message.channel.id === 'probar-bot')
+	if (message.content = /^\d+$/.test(val))
+	{
+		message.reply('You already are the admin, boss');
+	}
 }
 	
 function isNumeric(str) {
