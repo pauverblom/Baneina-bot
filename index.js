@@ -191,15 +191,17 @@ if (message.content === '!FeelingLucky') {
 }
 		
 
-if (message.isNumber()){
+if (message.isNumeric()){
      	if (message.channel.id === 'counting') {
 		message.reply('This channel is for counting');		
   }
 }
 	
-String.prototype.isNumber = function() {
-return /^\d+$/.test(this);
-};
+function isNumeric(str) {
+  if (typeof str != "string") return false // we only process strings!  
+  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
 	
 	//Give image memer role
   if (message.attachments.size > 0) {
