@@ -189,12 +189,12 @@ if (message.content === '!FeelingLucky') {
     message.reply('You already are the admin, boss');
   }
 }
-	
-if (isNaN(message.content)) {
-  if (message.channel.id === 'counting')
-{
+
+if (message.channel.id === 'counting'){	
+     if (isNaN(message.content)) {
  message.reply('This channel is exclusively for counting');
-}
+console.log('ha enviado caca');
+    }
 }
 	
 	//Give image memer role
