@@ -192,7 +192,7 @@ if (message.content === '!FeelingLucky') {
 	
 if (message.channel.id === 'counting') {
 	var casa = message.content;		
-	if (message.content = /^\d+$/.test(casa)) {
+	if (casa = /^\d+$/.test(casa)) {
 	console.log('it is');
 	}
 }
