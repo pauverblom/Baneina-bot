@@ -189,10 +189,11 @@ if (message.content === '!FeelingLucky') {
     message.reply('You already are the admin, boss');
   }
 }
-		
-if (message.content = /^\d+$/.test(message)) {
-	if (message.channel.id === 'counting') {
-		console.log('it is');
+	
+if (message.channel.id === 'counting') {
+	var = message.content		
+	if (message.content = /^\d+$/.test(message)) {
+	console.log('it is');
 	}
 }
 	
