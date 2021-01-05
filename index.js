@@ -190,13 +190,10 @@ if (message.content === '!FeelingLucky') {
   }
 }
 	
-if (message.isNumber()){
-   console.log('puta');
+if (isNaN(message.content) return;
+else {
+  console.log('si')
 }
-	
-String.prototype.isNumber = function() {
-  return /^\d+$/.test(this);
-};
 	
 	//Give image memer role
   if (message.attachments.size > 0) {
