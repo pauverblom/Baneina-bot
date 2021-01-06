@@ -1,5 +1,4 @@
 //Librerías
-//No tocar nada de esto a no ser que se quiera añadir alguna función nueva que requiera una nueva librería
 const http = require('http');
 const express = require('express');
 const app = express();
@@ -14,9 +13,6 @@ const commandFiles = fs
 
 for (const file of commandFiles) {
   const command = require(`./Commands/${file}`);
-
-  // set a new item in the Collection
-  // with the key as the command name and the value as the exported module
   client.commands.set(command.name, command);
 }
 
@@ -33,20 +29,26 @@ function attachIsImage(msgAttach) {
 }
 
 //ESTOY LISTO!
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-//si se envia mensaje
 
+//Mensaje Enviado
 client.on('message', (message) => {
-//erase message
-  if (isNaN(message.content)) {
+//Counting channel
+if (isNaN(message.content)) {
   if (message.channel.name === 'counting') {
     message.delete();
     message.author.send('The counting channel is exclusively for counting.');
+  } else if (parseInt(message.content) < 780) {
+    message.delete();
   }
 }
+
+  
+ 
   
   //Give image memer role
   if (message.attachments.size > 0) {
