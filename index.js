@@ -34,27 +34,22 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
 //Mensaje Enviado
 client.on('message', (message) => {
-  
-//Counting channel
-if (isNaN(message.content)) {
-  if (message.channel.name === 'counting') {
-    message.delete();
-    message.author.send('The counting channel is exclusively for counting.');
-  }
-}
-  
-if (Number(message.content) < 780) {
-    console.log('si');
+  //Counting channel
+  if (isNaN(message.content)) {
     if (message.channel.name === 'counting') {
       message.delete();
-      
+      message.author.send('The counting channel is exclusively for counting.');
     }
-}
+  }
 
-  
+  if (Number(message.content) < 780) {
+    if (message.channel.name === 'counting') {
+      message.delete();
+    }
+  }
+
   //Give image memer role
   if (message.attachments.size > 0) {
     if (message.attachments.every(attachIsImage)) {
@@ -66,8 +61,6 @@ if (Number(message.content) < 780) {
       member.roles.add(imagememer);
     }
   }
-
-  
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
@@ -81,7 +74,6 @@ if (Number(message.content) < 780) {
     console.error(error);
   }
 });
-
 
 //Welcoming and role giving
 client.on('guildMemberAdd', (member) => {
