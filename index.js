@@ -30,6 +30,7 @@ if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 const args = message.content.slice(prefix.length).trim().split(' ');
 const command = args.shift().toLowerCase();
+	console.log(command);
 	//!OOF
   if (message.content === "!OOF") {
     message.reply("Whoah! You just commited die!");
