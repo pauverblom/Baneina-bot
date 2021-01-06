@@ -54,7 +54,7 @@ client.on('message', (message) => {
     console.error(error);
   }
 
-  if (isNaN(message.content)) {
+  if (isNaN(args)) {
     if (message.channel.name === 'counting') {
       message.delete();
       message.author.send('The counting channel is exclusively for counting.');
