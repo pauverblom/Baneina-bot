@@ -40,16 +40,15 @@ client.on('ready', () => {
 //si se envia mensaje
 
 client.on('message', (message) => {
-  
+
   if (isNaN(message.content)) {
-    if (message.channel.name === 'counting') {
-      message.delete();
-      message.author.send('The counting channel is exclusively for counting.');
-      catch (error){
-      console.error(error);
-    }
-    }
+  if (message.channel.name === 'counting') {
+    message.delete();
+    message.author.send('The counting channel is exclusively for counting.');
   }
+}
+
+  
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
