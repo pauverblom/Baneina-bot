@@ -55,7 +55,7 @@ client.on('message', (message) => {
     message.reply('there was an error trying to execute that command!');
   }
   
-  if (command = "avatar") {
+  if (command === "avatar") {
     if (!message.mentions.users.size) {
       const embed1 = new Discord.MessageEmbed().setImage(message.author.displayAvatarURL());
       message.channel.send(embed1);
