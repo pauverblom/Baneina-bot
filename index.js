@@ -37,18 +37,19 @@ client.on('ready', () => {
 
 //Mensaje Enviado
 client.on('message', (message) => {
+  
 //Counting channel
 if (isNaN(message.content)) {
   if (message.channel.name === 'counting') {
     message.delete();
     message.author.send('The counting channel is exclusively for counting.');
   } else if (parseInt(message.content) < 780) {
-    message.delete();
+    if (message.channel.name === 'counting') {
+      message.delete();
+    }
   }
 }
 
-  
- 
   
   //Give image memer role
   if (message.attachments.size > 0) {
