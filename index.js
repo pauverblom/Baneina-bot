@@ -24,6 +24,11 @@ client.on("ready", () => {
 //si se envia mensaje
 
 client.on("message", (message) => {
+	
+if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+const args = message.content.slice(prefix.length).trim().split(' ');
+const command = args.shift().toLowerCase();
 	//!OOF
   if (message.content === "!OOF") {
     message.reply("Whoah! You just commited die!");
