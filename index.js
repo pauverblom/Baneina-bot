@@ -40,14 +40,26 @@ client.on('ready', () => {
 //si se envia mensaje
 
 client.on('message', (message) => {
-
+//erase message
   if (isNaN(message.content)) {
   if (message.channel.name === 'counting') {
     message.delete();
     message.author.send('The counting channel is exclusively for counting.');
   }
 }
+  
+  //Give image memer role
+  if (message.attachments.size > 0) {
+    if (message.attachments.every(attachIsImage)) {
+      let member = message.member;
 
+      let imagememer = message.guild.roles.cache.find(
+        (role) => role.name === 'Image memer'
+      );
+      member.roles.add(imagememer);
+    }
+  }
+});
   
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -64,18 +76,10 @@ client.on('message', (message) => {
 
   
 
-  //Give image memer role
-  if (message.attachments.size > 0) {
-    if (message.attachments.every(attachIsImage)) {
-      let member = message.member;
 
-      let imagememer = message.guild.roles.cache.find(
-        (role) => role.name === 'Image memer'
-      );
-      member.roles.add(imagememer);
-    }
-  }
-});
+
+
+
 //Welcoming and role giving
 client.on('guildMemberAdd', (member) => {
   var role = member.guild.roles.cache.find(
