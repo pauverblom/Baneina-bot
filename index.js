@@ -3,12 +3,20 @@
 const http = require("http");
 const express = require("express");
 const app = express();
+const fs = require('fs');
 const Discord = require("discord.js");
 const prefix = ("!");
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-//Inicializar variables.
-var Existence = 1;
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+
+	// set a new item in the Collection
+	// with the key as the command name and the value as the exported module
+	client.commands.set(command.name, command);
+}
 
 //declarar funciones
 
@@ -33,45 +41,6 @@ client.on("message", (message) => {
 	const command = args.shift().toLowerCase();
 
 
-	//!Meme
-  if (message.content === "!Meme") {
-    var number1 = 6;
-    var random = Math.floor(Math.random() * 6) + 1;
-    switch (random) {
-      case 1:
-        message.reply("Sopa do macaco uma delicia kkkk");
-        break;
-      case 2:
-        message.reply("It ain't much but it's honest work");
-        break;
-      case 3:
-        message.reply(
-          "Watch out!! Oh no, he has airpods on, he can't hear us!! OMG"
-        );
-        break;
-      case 4:
-        message.reply("Carefully. He's a hero");
-        break;
-      case 5:
-        message.reply("Ahh. I see you're a man of culture as well");
-        break;
-      case 6:
-        message.reply("Wait... IS THIS?!?  |  | |  | |  |_");
-        break;
-    }
-  }
-	//!Subscribe
-  if (message.content === "!Subscribe") {
-    message.reply(
-      "SUBSCRIBE TO MY CHANNEL https://www.youtube.com/channel/UCHDfM2CVCqRR5XhncqNgcuw?sub_confirmation=1"
-    );
-  }
-	//!Bitchlasagna
-  if (message.content === "!Bitchlasagna") {
-    message.reply(
-      "DO YOUR PART! " + " https://www.youtube.com/watch?v=6Dh-RL__uN4"
-    );
-  }
 	//!Cykablyat
   if (message.content === "!Cykablyat") {
     var number2 = 5;
@@ -150,7 +119,6 @@ if (message.content === '!FeelingLucky') {
     message.reply('You already are the admin, boss');
   }
 }
-
 	
     if (isNaN(message.content)) {
 	     if (message.channel.name === 'counting'){
