@@ -54,6 +54,17 @@ client.on('message', (message) => {
     console.error(error);
     message.reply('there was an error trying to execute that command!');
   }
+  
+  if (command = "avatar") {
+    if (!message.mentions.users.size) {
+      const embed1 = new Discord.MessageEmbed().setImage(message.author.displayAvatarURL());
+      message.channel.send(embed1);
+    } else {
+      var user = message.mentions.users.first();
+      const embed2 = new Discord.MessageEmbed().setImage(user.displayAvatarURL());
+      message.channel.send(embed2);
+    }
+  }
 
   if (isNaN(message.content)) {
     if (message.channel.name === 'counting') {
