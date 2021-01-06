@@ -40,7 +40,14 @@ client.on("message", (message) => {
 	
 	const command = args.shift().toLowerCase();
 
+	if (!client.commands.has(command)) return;
 
+	try {
+		client.commands.get(command).execute(message, args);
+	} catch (error) {
+		console.error(error);
+		message.reply('there was an error trying to execute that command!');
+	}
 	//!Cykablyat
   if (message.content === "!Cykablyat") {
     var number2 = 5;
