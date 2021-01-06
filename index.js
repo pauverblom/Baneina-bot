@@ -40,7 +40,7 @@ client.on('ready', () => {
 //si se envia mensaje
 
 client.on('message', (message) => {
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  if (message.author.bot) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
