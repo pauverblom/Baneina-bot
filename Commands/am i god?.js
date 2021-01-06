@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'am i god?',
+  name: 'am i god',
   description: 'Are you?',
   execute(message, args) {
     var highestrole = message.member.roles.highest.name;
