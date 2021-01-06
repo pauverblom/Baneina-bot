@@ -1,2 +1,2 @@
 # Baneina-bot
-this is baneina
+This is baneina. It is shy.
