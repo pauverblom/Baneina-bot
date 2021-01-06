@@ -43,13 +43,13 @@ if (isNaN(message.content)) {
   if (message.channel.name === 'counting') {
     message.delete();
     message.author.send('The counting channel is exclusively for counting.');
-  } else if (Number(message.content) < 780) {
-    console.log('sí');
-    if (message.channel.name === 'counting') {
-      message.delete();
-    }
   }
 }
+  
+if (Number(message.content) < 780) {
+    console.log('si');
+    if (message.channel.name === 'counting') {
+      message.delete();
 
   
   //Give image memer role
