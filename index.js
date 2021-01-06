@@ -50,6 +50,9 @@ if (Number(message.content) < 780) {
     console.log('si');
     if (message.channel.name === 'counting') {
       message.delete();
+      
+    }
+}
 
   
   //Give image memer role
