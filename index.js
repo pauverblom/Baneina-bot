@@ -40,7 +40,16 @@ client.on('ready', () => {
 //si se envia mensaje
 
 client.on('message', (message) => {
-  if (message.author.bot) return;
+  
+  if (isNaN(message.content)) {
+    if (message.channel.name === 'counting') {
+      message.delete();
+      message.author.send('The counting channel is exclusively for counting.');
+      catch (error){
+      console.error(error);
+    }
+    }
+  }
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
@@ -54,12 +63,7 @@ client.on('message', (message) => {
     console.error(error);
   }
 
-  if (isNaN(args)) {
-    if (message.channel.name === 'counting') {
-      message.delete();
-      message.author.send('The counting channel is exclusively for counting.');
-    }
-  }
+  
 
   //Give image memer role
   if (message.attachments.size > 0) {
