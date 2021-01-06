@@ -44,6 +44,7 @@ if (isNaN(message.content)) {
     message.delete();
     message.author.send('The counting channel is exclusively for counting.');
   } else if (parseInt(message.content, 10) < 780) {
+    console.log('sí');
     if (message.channel.name === 'counting') {
       message.delete();
     }
