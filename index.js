@@ -59,7 +59,7 @@ client.on('message', (message) => {
       member.roles.add(imagememer);
     }
   }
-});
+
   
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -73,11 +73,7 @@ client.on('message', (message) => {
   } catch (error) {
     console.error(error);
   }
-
-  
-
-
-
+});
 
 
 //Welcoming and role giving
