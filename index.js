@@ -78,7 +78,7 @@ client.on('message', (message) => {
 //Welcoming and role giving
 client.on('guildMemberAdd', (member) => {
   var role = member.guild.roles.cache.find(
-    (role) => role.name === 'Lvl 1 Crook'
+    (role) => role.name === 'Newbie'
   );
   member.roles.add(role);
   const channel = member.guild.channels.cache.find(
@@ -89,6 +89,15 @@ client.on('guildMemberAdd', (member) => {
     `Welcome to the server, ${member} Make sure to subscribe to my channel! (if you aren't already) https://www.youtube.com/c/baneina`
   );
 });
+
+
+client.on('messageReactionAdd', async (reaction, user) => {
+  // Define the emoji user add       
+  let role = message.guild.roles.find(role => role.name === 'Lvl 1 Crook');
+  if (message.channel.name !== 'rules') return;
+  message.member.addRole(role);
+});
+
 
 client.on('guildMemberRemove', (member) => {
   const channel = member.guild.channels.cache.find(
