@@ -92,9 +92,10 @@ client.on('guildMemberAdd', (member) => {
 
 
 client.on('messageReactionAdd', async (reaction, user) => {
-  // Define the emoji user add       
+  // Define the emoji user add    
   let role = message.guild.roles.find(role => role.name === 'Lvl 1 Crook');
   if (message.channel.name !== 'rules') return;
+  console.log('reacción');
   message.member.addRole(role);
 });
 
