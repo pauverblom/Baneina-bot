@@ -28,7 +28,7 @@ function attachIsImage(msgAttach) {
   );
 }
 
-//ESTOY LISTO!
+//ESTOY LISTO!!
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
