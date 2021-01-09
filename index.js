@@ -89,7 +89,6 @@ client.on('guildMemberAdd', (member) => {
 
 client.on('messageReactionAdd', async (reaction, user) => { 
       console.log('reacción');
-  }
 });
 
 
