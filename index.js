@@ -88,6 +88,9 @@ client.on('guildMemberAdd', (member) => {
 
 
 client.on('messageReactionAdd', async (reaction, user) => {
+	const channel = user.guild.channels.cache.find((ch) => ch.name === 'rules');
+	if (!channel) return;
+	else {
 	// When we receive a reaction we check if the reaction is partial or not
 	if (reaction.partial) {
 		// If the message this reaction belongs to was removed the fetching might result in an API error, which we need to handle
@@ -99,11 +102,11 @@ client.on('messageReactionAdd', async (reaction, user) => {
 			return;
 		}
 	}
+	}
 	// Now the message has been cached and is fully available
-	console.log(`${reaction.message.author}'s message "${reaction.message.content}" gained a reaction!`);
-	// The reaction is now also fully available and the properties will be reflected accurately:a
-	console.log(`${reaction.count} user(s) have given the same reaction to this message!`);
-});
+	console.log("si");
+	}
+	});
 
 
 client.on('guildMemberRemove', (member) => {
