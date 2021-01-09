@@ -87,11 +87,8 @@ client.on('guildMemberAdd', (member) => {
 });
 
 
-client.on('messageReactionAdd', async (reaction, user) => {
-  let role = reaction.guild.roles.find(role => role.name === 'Lvl 1 Crook');
-  if (reaction.channel.name === 'rules') { 
+client.on('messageReactionAdd', async (reaction, user) => { 
       console.log('reacción');
-     reaction.message.author.addRole(role);
   }
 });
 
