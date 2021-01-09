@@ -90,16 +90,6 @@ client.on('guildMemberAdd', (member) => {
 client.on('messageReactionAdd', async (reaction, user) => {
 	const channel = user.guild.channels.cache.find((ch) => ch.name === 'rules');
 	let imagememer = user.guild.roles.cache.find((role) => role.name === 'Lvl 1 Crook');
-	// When we receive a reaction we check if the reaction is partial or not
-	if (reaction.partial) {
-		// If the message this reaction belongs to was removed the fetching might result in an API error, which we need to handle
-		try {
-			await reaction.fetch();
-		} catch (error) {
-			console.error('Something went wrong when fetching the message: ', error);
-			// Return as `reaction.message.author` may be undefined/null
-			return;
-	// Now the message has been cached and is fully available
 	if (!channel) return;
 			else {
 	reaction.message.author.roles.add(role);
