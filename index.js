@@ -77,26 +77,21 @@ client.on('message', (message) => {
 
 //Welcoming and role giving
 client.on('guildMemberAdd', (member) => {
-  var role = member.guild.roles.cache.find(
-    (role) => role.name === 'Newbie'
-  );
-  member.roles.add(role);
-  const channel = member.guild.channels.cache.find(
+    const channel = member.guild.channels.cache.find(
     (ch) => ch.name === 'greeting-channel'
   );
   if (!channel) return;
   channel.send(
-    `Welcome to the server, ${member} Make sure to subscribe to my channel! (if you aren't already) https://www.youtube.com/c/baneina`
+    `Welcome to the server, ${member}. Accept the rules in #rules by reacting to the emoji in order to gain access to the server. Also, make sure to subscribe to my channel! (if you aren't already) https://www.youtube.com/c/baneina`
   );
 });
 
-
 client.on('messageReactionAdd', async (reaction, user) => {
-  // Define the emoji user add    
   let role = message.guild.roles.find(role => role.name === 'Lvl 1 Crook');
-  if (message.channel.name !== 'rules') return;
-  console.log('reacción');
-  message.member.addRole(role);
+  if (message.channel.name === 'rules') { 
+      console.log('reacción');
+     message.member.addRole(role);
+  }
 });
 
 
