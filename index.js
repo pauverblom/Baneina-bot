@@ -77,6 +77,7 @@ client.on('message', (message) => {
 
 //Welcoming
 client.on('guildMemberAdd', (member) => {
+	console.log('sí');
     const channel = member.guild.channels.cache.find((ch) => ch.name === 'greeting-channel');
   if (!channel) return;
   channel.send(
@@ -86,6 +87,7 @@ client.on('guildMemberAdd', (member) => {
 
 
 client.on('messageReactionAdd', async (reaction, user) => {
+	console.log('sí');
 	let member = reaction.message.guild.members.cache.get(user.id);
 	const role = reaction.message.guild.roles.cache.find((role) => role.name === 'Lvl 1 Crook');
 	if (reaction.message.channel.name === "rules")	{
@@ -95,6 +97,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
 
 client.on('guildMemberRemove', (member) => {
+	console.log('sí');
   const channel = member.guild.channels.cache.find(
     (ch) => ch.name === 'dock-of-shame'
   );
