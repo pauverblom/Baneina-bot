@@ -45,7 +45,7 @@ client.on('message', (message) => {
   }
 
   if (Number(message.content) < 780) {
-    if (message.channel.name === 'counting') {
+    if (message.channel.name === 'counting-🔢') {
       message.delete();
     }
   }
