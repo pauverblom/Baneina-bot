@@ -38,7 +38,7 @@ client.on('ready', () => {
 client.on('message', (message) => {
   //Counting channel
   if (isNaN(message.content)) {
-    if (message.channel.name === 'counting') {
+    if (message.channel.name === 'counting-🔢') {
       message.delete();
       message.author.send('The counting channel is exclusively for counting.');
     }
@@ -78,7 +78,7 @@ client.on('message', (message) => {
 //Welcoming
 client.on('guildMemberAdd', (member) => {
     const channel = member.guild.channels.cache.find(
-    (ch) => ch.name === 'greeting-channel'
+    (ch) => ch.name === 'greeting-channel-👋'
   );
   if (!channel) return;
   channel.send(
@@ -90,8 +90,7 @@ client.on('guildMemberAdd', (member) => {
 client.on('messageReactionAdd', async (reaction, user) => {
 	let member = reaction.message.guild.members.cache.get(user.id);
 	const role = reaction.message.guild.roles.cache.find((role) => role.name === 'Lvl 1 Crook');
-	if (reaction.message.channel.name === "rules")	{
-		consolo.log('sí');
+	if (reaction.message.channel.name === "rules-📜")	{
 	member.roles.add(role);
 	}
 });
@@ -99,7 +98,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
 client.on('guildMemberRemove', (member) => {
   const channel = member.guild.channels.cache.find(
-    (ch) => ch.name === 'dock-of-shame'
+    (ch) => ch.name === 'dock-of-shame-🚢'
   );
   if (!channel) return;
 
