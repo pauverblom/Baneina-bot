@@ -77,10 +77,7 @@ client.on('message', (message) => {
 
 //Welcoming
 client.on('guildMemberAdd', (member) => {
-	console.log('sí');
-    const channel = member.guild.channels.cache.find(
-    (ch) => ch.name === 'greeting-channel'
-  );
+    const channel = member.guild.channels.cache.find((ch) => ch.name === 'greeting-channel');
   if (!channel) return;
   channel.send(
     `Welcome to the server, ${member}. Accept the rules in #rules by reacting to the emoji in order to gain access to the server. Also, make sure to subscribe to my channel! (if you aren't already) https://www.youtube.com/c/baneina`
