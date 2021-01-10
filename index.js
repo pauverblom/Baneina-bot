@@ -88,6 +88,16 @@ client.on('guildMemberAdd', (member) => {
 
 client.on('messageReactionAdd', async (reaction, user) => {
 	console.log('sí');
+	if (reaction.partial) {
+		// If the message this reaction belongs to was removed the fetching might result in an API error, which we need to handle
+		try {
+			await reaction.fetch();
+		} catch (error) {
+			console.error('Something went wrong when fetching the message: ', error);
+			// Return as `reaction.message.author` may be undefined/null
+			return;
+		}
+	}
 	let member = reaction.message.guild.members.cache.get(user.id);
 	const role = reaction.message.guild.roles.cache.find((role) => role.name === 'Lvl 1 Crook');
 	if (reaction.message.channel.name === "rules")	{
