@@ -77,8 +77,9 @@ client.on('message', (message) => {
 
 //Welcoming
 client.on('guildMemberAdd', (member) => {
-	console.log('sí');
-    const channel = member.guild.channels.cache.find((ch) => ch.name === 'greeting-channel');
+    const channel = member.guild.channels.cache.find(
+    (ch) => ch.name === 'greeting-channel'
+  );
   if (!channel) return;
   channel.send(
     `Welcome to the server, ${member}. Accept the rules in #rules by reacting to the emoji in order to gain access to the server. Also, make sure to subscribe to my channel! (if you aren't already) https://www.youtube.com/c/baneina`
@@ -87,17 +88,6 @@ client.on('guildMemberAdd', (member) => {
 
 
 client.on('messageReactionAdd', async (reaction, user) => {
-	console.log('sí');
-	if (reaction.partial) {
-		// If the message this reaction belongs to was removed the fetching might result in an API error, which we need to handle
-		try {
-			await reaction.fetch();
-		} catch (error) {
-			console.error('Something went wrong when fetching the message: ', error);
-			// Return as `reaction.message.author` may be undefined/null
-			return;
-		}
-	}
 	let member = reaction.message.guild.members.cache.get(user.id);
 	const role = reaction.message.guild.roles.cache.find((role) => role.name === 'Lvl 1 Crook');
 	if (reaction.message.channel.name === "rules")	{
@@ -107,7 +97,6 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
 
 client.on('guildMemberRemove', (member) => {
-	console.log('sí');
   const channel = member.guild.channels.cache.find(
     (ch) => ch.name === 'dock-of-shame'
   );
@@ -125,5 +114,3 @@ client.on('guildMemberRemove', (member) => {
 });
 
 client.login(process.env.TOKEN);
-
-//Done
