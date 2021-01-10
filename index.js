@@ -77,6 +77,7 @@ client.on('message', (message) => {
 
 //Welcoming
 client.on('guildMemberAdd', (member) => {
+	console.log('sí');
     const channel = member.guild.channels.cache.find(
     (ch) => ch.name === 'greeting-channel'
   );
