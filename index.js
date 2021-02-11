@@ -37,12 +37,12 @@ client.on('ready', () => {
 //Mensaje Enviado
 client.on('message', (message) => {
 	
-	//tirar a Kevin
-	if(message.author.id === '746054224739041393'){
-		setTimeout(function () {
-	      message.delete();
-        }, 3000);
-}
+	//			tirar a Kevin
+	//			if(message.author.id === '746054224739041393'){
+	//				setTimeout(function () {
+	//  			  message.delete();
+        //			}, 3000);
+	//			}
 
   //Counting channel
   if (isNaN(message.content)) {
