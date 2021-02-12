@@ -90,7 +90,7 @@ client.on('guildMemberAdd', (member) => {
   );
   if (!channel) return;
   channel.send(
-    `Welcome to the server, ${member}. Accept the rules in #rules by reacting to the emoji in order to gain access to the server. Also, make sure to subscribe to my channel! (if you aren't already) https://www.youtube.com/c/baneina`
+    `Welcome to the server, ${member}. IMPORTANT!! Accept the #rules-📜 by reacting to the message to enter the server. Subscribe to my channel! https://www.youtube.com/c/baneina`
   );
 });
 
