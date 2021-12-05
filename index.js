@@ -60,20 +60,18 @@ client.on('message', (message) => {
     }
   }
 
-if (message.content.startsWith(prefix)
+if (message.content.startsWith(prefix))
     {
-  const args = message.content.slice(prefix.length).trim().split(/ +/);
-
-  const command = args.shift().toLowerCase();
-
-  if (!client.commands.has(command)) return;
-
-  try {
-    client.commands.get(command).execute(message, args);
-  } catch (error) {
-    console.error(error);
-  }
-}
+  	const command = message.content.slice(prefix.length).trim().split(/ +/).shift().toLowerCase();
+	  if (!client.commands.has(command)) return;
+	  try 
+	  {
+	    client.commands.get(command).execute(message, args);
+	  } catch (error) 
+	  {
+	    console.error(error);
+	  }
+	}
 });
 
 //Welcoming
