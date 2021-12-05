@@ -4,8 +4,8 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const Discord = require('discord.js');
-const prefix = '!';
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
+
 client.commands = new Discord.Collection();
 const commandFiles = fs
   .readdirSync('./Commands')
@@ -21,10 +21,7 @@ for (const file of commandFiles) {
 function attachIsImage(msgAttach) {
   var url = msgAttach.url;
   return (
-    url.indexOf(
-      'jpg' | 'png' | 'jpeg',
-      url.length - ('jpg' | 'png' | 'jpeg').length /*or 3*/
-    ) !== -1
+    url.indexOf('jpg' | 'png' | 'jpeg', url.length - ('jpg' | 'png' | 'jpeg').length /*or 3*/) !== -1
   );
 }
 
@@ -36,24 +33,17 @@ client.on('ready', () => {
 
 //Mensaje Enviado
 client.on('message', (message) => {
-	
-	//			tirar a Kevin
-	//			if(message.author.id === '746054224739041393'){
-	//				setTimeout(function () {
-	//  			  message.delete();
-        //			}, 3000);
-	//			}
 
   //Counting channel
   if (isNaN(message.content)) {
-    if (message.channel.name === 'counting-🔢') {
+    if (message.channel.id == 785909768379301940) { //canal de contar
       message.delete();
-      message.author.send('The counting channel is exclusively for counting.');
+      message.author.send('The counting channel is exclusively for counting. Do not do that again, I am living in your walls.');
     }
   }
 
-  if (Number(message.content) < 1250) {
-    if (message.channel.name === 'counting-🔢') {
+  if (Number(message.content) < 2500) {
+    if (message.channel.name == 785909768379301940) { //canal de contar
       message.delete();
     }
   }
@@ -64,12 +54,14 @@ client.on('message', (message) => {
       let member = message.member;
 
       let imagememer = message.guild.roles.cache.find(
-        (role) => role.name === 'Image memer'
+        (role) => role.id == 559311593020588032
       );
       member.roles.add(imagememer);
     }
   }
 
+if (message.content.startsWith(prefix);
+    {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
   const command = args.shift().toLowerCase();
@@ -81,12 +73,13 @@ client.on('message', (message) => {
   } catch (error) {
     console.error(error);
   }
+}
 });
 
 //Welcoming
 client.on('guildMemberAdd', (member) => {
     const channel = member.guild.channels.cache.find(
-    (ch) => ch.name === 'greeting-channel-👋'
+    (ch) => ch.id == 552852895704547328 //canal bienvenida
   );
   if (!channel) return;
   channel.send(
@@ -97,16 +90,17 @@ client.on('guildMemberAdd', (member) => {
 
 client.on('messageReactionAdd', async (reaction, user) => {
 	let member = reaction.message.guild.members.cache.get(user.id);
-	const role = reaction.message.guild.roles.cache.find((role) => role.name === 'Lvl 1 Crook');
-	if (reaction.message.channel.name === "rules-📜")	{
-	member.roles.add(role);
+	const role = reaction.message.guild.roles.cache.find((role) => role.id == 539113230581104644); //Rol inicial
+	if (reaction.message.channel.id == 778542590592679967) //canal reglas
+	{
+		member.roles.add(role);
 	}
 });
 
 
 client.on('guildMemberRemove', (member) => {
   const channel = member.guild.channels.cache.find(
-    (ch) => ch.name === 'dock-of-shame-🚢'
+    (ch) => ch.id == 782674407713144842  //dock of shame
   );
   if (!channel) return;
 
