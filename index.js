@@ -60,7 +60,7 @@ client.on('message', (message) => {
     }
   }
 
-if (message.content.startsWith(prefix);
+if (message.content.startsWith(prefix)
     {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 
