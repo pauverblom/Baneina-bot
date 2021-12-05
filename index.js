@@ -63,7 +63,8 @@ client.on('message', (message) => {
 
 if (message.content.startsWith(prefix))
     {
-  	const command = message.content.slice(prefix.length).trim().split(/ +/).shift().toLowerCase();
+	    const args = message.content.slice(prefix.length).trim().split(/ +/).shift().toLowerCase();
+  		const command = args.shift().toLowerCase();
 	  if (!client.commands.has(command)) return;
 	  try 
 	  {
