@@ -15,7 +15,7 @@ module.exports = {
         var user = message.mentions.users.first();
         let role = message.guild.roles.cache.find((role) => role.id == 917521104908742736);
         user.roles.add(role);
-        user.send(`${user} has been muted.`)
+        message.channel.send(`${user} has been muted.`)
       }
     }
   },
