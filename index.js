@@ -6,7 +6,7 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client({partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 const prefix = '!';
-const swearwords = ["fuck", "shit", "asshole", "cunt"]
+const swearwords = ["fuck", "shit", "asshole", "cunt", "bitch", "kurwa", "scheiße", "scheisse", "whore"]
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./Commands').filter((file) => file.endsWith('.js'));
