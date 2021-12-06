@@ -34,8 +34,6 @@ client.on('ready', () => {
 //Message Sent
 client.on('message', (message) => {
 
-        if (message.author.bot) return; //Ignore the bot's messages
-
 	if (message.channel.id == 881158694396633108)
 	{
 		if (!message.content.toLowerCase().includes('ñ'))
