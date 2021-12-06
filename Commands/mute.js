@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
   name: 'mute',
   description: 'Mute someone you want to mute',
-  async run (client, message, args)
+  async execute (client, message, args)
   {
     if (message.author.id == 405050037186330624) //me
     {
