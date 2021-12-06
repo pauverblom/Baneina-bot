@@ -36,7 +36,14 @@ client.on('message', (message) => {
 
         if (message.author.bot) return; //Ignore the bot's messages
 
-
+	if (message.channel == 881158694396633108)
+	{
+		if (!message.content.toLowerCase.includes('ñ'))
+		{
+			message.delete();
+			message.author.send('The #ñ channel is exclusively for ñ. DO NOT DO THAT AGAIN OR I WILL FIND YOU');
+		}
+	}
 	if (message.content.toLowerCase().includes('earth is flat'))
 	{
 		message.channel.send(`${message.author}, your brain is flat.`);
