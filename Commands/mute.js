@@ -25,13 +25,13 @@ module.exports = {
         var user = message.mentions.members.first();
         let role = message.guild.roles.cache.find((role) => role.id == 917521104908742736);
         user.roles.add(role);
-        message.channel.send(`${user} has been muted for ${time} milliseconds (I am wayyyy too lazy to code this).`);
+        message.channel.send(`${user} has been muted for ${(time / 1000)} seconds, or ${(time / 60000)} minutes, or ${(time / 3600000)} hours lol.`);
         
         
         user.timeout = message.client.setTimeout(async () => {
           try {
             await user.roles.remove(role);
-            message.channel.send(`${user} has been unmuted`);
+            message.channel.send(`${user} has been unmuted after ${(time / 1000)} seconds, or ${(time / 60000)} minutes, or ${(time / 3600000)} hours lol.`);
           } catch (err) {
               console.log(err)
               return message.channel.send('Please check the role hierarchy', err.message);
