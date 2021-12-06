@@ -25,7 +25,7 @@ module.exports = {
         var user = message.mentions.members.first();
         let role = message.guild.roles.cache.find((role) => role.id == 917521104908742736);
         user.roles.add(role);
-        message.channel.send(`${user} has been muted indefinitely.`)
+        message.channel.send(`${user} has been muted for ${time} milliseconds (I am wayyyy too lazy to code this).`);
         
         
         user.timeout = message.client.setTimeout(async () => {
