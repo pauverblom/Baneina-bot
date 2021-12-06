@@ -41,7 +41,7 @@ client.on('message', (message) => {
 		message.channel.send(`${message.author}, your brain is flat.`);
 	}
 	
-	if (message.content.toLowerCase().includes('fuck'))
+	if (message.content.toLowerCase().includes('fuck' | 'shit' | 'asshole'))
 	{
 		message.channel.send(`${message.author}, language.`);
 	}
