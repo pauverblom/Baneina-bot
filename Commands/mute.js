@@ -13,10 +13,10 @@ module.exports = {
       else
       {
         if (!args[1])
-        return message.channel.send('Please enter a length of time of 14 days or less (1s/m/h/d)');
+        return message.channel.send('Please enter an amount of time');
         let time = (args[1]);
         if (!time || time > 1209600000) // Cap at 14 days, larger than 24.8 days causes integer overflow
-        return message.channel.send('Please enter a length of time of 14 days or less (1s/m/h/d)');
+        return message.channel.send('Please enter an amount of time smaller than 1209600000');
 
         let reason = args.slice(2).join(' ');
         if (!reason) reason = '`None Provided`';
@@ -38,6 +38,10 @@ module.exports = {
            }
         }, time);
       }
+    }
+    else
+    {
+      message.channel.send('You cannot mute lol');
     }
   },
 };
