@@ -14,7 +14,7 @@ module.exports = {
       {
         if (!args[1])
         return message.channel.send('Please enter a length of time of 14 days or less (1s/m/h/d)');
-        let time = ms(args[1]);
+        let time = (args[1]);
         if (!time || time > 1209600000) // Cap at 14 days, larger than 24.8 days causes integer overflow
         return message.channel.send('Please enter a length of time of 14 days or less (1s/m/h/d)');
 
