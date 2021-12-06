@@ -32,7 +32,10 @@ module.exports = {
           try {
             await user.roles.remove(role);
             message.channel.send(`${user} has been unmuted`);
-          }
+          } catch (err) {
+              console.log(err)
+              return message.channel.send('Please check the role hierarchy', err.message);
+           }
         }, time);
       }
     }
