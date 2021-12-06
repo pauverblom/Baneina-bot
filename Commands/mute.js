@@ -8,7 +8,7 @@ module.exports = {
     {
       if (!message.mentions.users.size)
       {
-        message.send(`You need to mention someone in order to mute them`);
+        message.channel.send(`You need to mention someone in order to mute them`);
       }
       else
       {
