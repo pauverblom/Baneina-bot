@@ -38,7 +38,12 @@ client.on('message', (message) => {
 
 	if (message.content.toLowerCase().includes('earth is flat'))
 	{
-		message.channel.send(`${message.author} , your brain is flat.`);
+		message.channel.send(`${message.author}, your brain is flat.`);
+	}
+	
+	if (message.content.toLowerCase().includes('fuck'))
+	{
+		message.channel.send(`${message.author}, language.`);
 	}
 	
         if (isNaN(message.content)) { //
