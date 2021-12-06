@@ -38,7 +38,7 @@ client.on('message', (message) => {
 
 	if (message.content.toLowerCase().includes('earth is flat'))
 	{
-		message.send('${member}, your brain is flat.');
+		message.channel.send('${member}, your brain is flat.');
 	}
 	
         if (isNaN(message.content)) { //
