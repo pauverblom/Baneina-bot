@@ -36,6 +36,11 @@ client.on('message', (message) => {
         if (message.author.bot) return; //Ignore the bot's messages
 
 
+	if (message.content.toLowerCase().includes('earth is flat'))
+	{
+		message.send('${member}, your brain is flat.');
+	}
+	
         if (isNaN(message.content)) { //
                 if (message.channel.id == 785909768379301940) { //Counting channel
                         message.delete();
