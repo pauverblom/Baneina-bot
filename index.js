@@ -72,6 +72,18 @@ client.on('message', (message) => {
                  console.error(error);
              }
         }
+	
+	if (message.content.toLowerCase() === 'am i god?')
+	{
+		if (message.author.id == 405050037186330624)
+		{
+			message.channel.send('Yes, you are, my lord');
+		}
+		else
+		{
+			message.channel.send('Step aside, peasant');
+		}
+	}
 });
 
 //Welcoming
