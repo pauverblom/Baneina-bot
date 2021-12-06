@@ -6,7 +6,7 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client({partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 const prefix = '!';
-const Swearwords = ["fuck", "shit", "asshole", "cunt"]
+const swearwords = ["fuck", "shit", "asshole", "cunt"]
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./Commands').filter((file) => file.endsWith('.js'));
@@ -42,7 +42,7 @@ client.on('message', (message) => {
 		message.channel.send(`${message.author}, your brain is flat.`);
 	}
 	
-	if (BannedWords.some(word => message.toString().toLowerCase().includes(word))) 
+	if (swearwords.some(word => message.toString().toLowerCase().includes(word)))
 	{
 		message.channel.send(`${message.author}, language.`);
 	};
