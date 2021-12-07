@@ -11,7 +11,7 @@ const swearwords = ["fuck", "shit", "asshole", "cunt", "bitch", "kurwa", "schei�
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./Commands').filter((file) => file.endsWith('.js'));
 
-for (const file of commandFiles) 
+for (const file of commandFiles)
 {
 	const command = require(`./Commands/${file}`);
 	client.commands.set(command.name, command);
@@ -19,7 +19,7 @@ for (const file of commandFiles)
 
 //declare functions
 
-function attachIsImage(msgAttach) 
+function attachIsImage(msgAttach)
 {
 	var url = msgAttach.url;
 	return (url.indexOf('jpg' | 'png' | 'jpeg', url.length - ('jpg' | 'png' | 'jpeg').length) !== -1); //return true if it's an image
@@ -42,22 +42,22 @@ client.on('message', (message) => {
 			message.author.send('The #ñ channel is exclusively for ñ. DO NOT DO THAT AGAIN OR I WILL FIND YOU');
 		}
 	}
-	
-	if (message.member.roles.cache.some(role => role.id == 917521104908742736)) 
+
+	if (message.member.roles.cache.some(role => role.id == 917521104908742736))
 	{
 	    message.delete();
 	}
-	
+
 	if (message.content.toLowerCase().includes('earth is flat'))
 	{
 		message.channel.send(`${message.author}, your brain is flat.`);
 	}
-	
+
 	if (swearwords.some(word => message.toString().toLowerCase().includes(word)))
 	{
 		message.channel.send(`${message.author}, language.`);
 	};
-	
+
         if (isNaN(message.content)) { //
                 if (message.channel.id == 785909768379301940) { //Counting channel
                         message.delete();
@@ -73,28 +73,27 @@ client.on('message', (message) => {
 
         //Give image memer role
         if (message.attachments.size > 0) {
-                if (message.attachments.every(attachIsImage)) {
-                        let member = message.member;
-
-                        let imagememer = message.guild.roles.cache.find((role) => role.id == 559311593020588032);
-                        member.roles.add(imagememer);
+                if (message.attachments.every(attachIsImage))
+								{
+                	let imagememer = message.guild.roles.cache.find((role) => role.id == 559311593020588032);
+                  	message.author.roles.add(imagememer);
                 }
         }
 
-        if (message.content.startsWith(prefix)) 
+        if (message.content.startsWith(prefix))
 		{
 			const args = message.content.slice(prefix.length).trim().split(/ +/);
             const command = args.shift().toLowerCase();
             if (!client.commands.has(command)) return;
-                
-			try 
-			{     	
+
+			try
+			{
 				client.commands.get(command).execute(message, args);
                 } catch (error) {
                  console.error(error);
              }
         }
-	
+
 	if (message.content.toLowerCase() === 'am i god?')
 	{
 		if (message.author.id == 405050037186330624)
