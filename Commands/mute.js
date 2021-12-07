@@ -46,7 +46,7 @@ module.exports = {
         try {
           if (user.roles.highest === muted_role)
           {
-            await user.roles.remove(role);
+            await user.roles.remove(muted_role);
             message.channel.send(`${user} has been unmuted after ${seconds} seconds, or ${minutes.toFixed(2)} minutes, or ${hours.toFixed(1)} hours lol.`);
           }
           } catch (err) {
