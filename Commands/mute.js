@@ -3,8 +3,7 @@ module.exports = {
   description: 'Mute someone you want to mute',
   async execute (message, args)
   {
-    let admin_role = message.guild.roles.cache.find((role) => role.id == 759034196235911210);
-    if (message.member.roles.highest.position >= admin_role.position) //admin
+    if (message.member.roles.highest.position >= (759034196235911210).position) //admin
     {
       let muted_role = message.guild.roles.cache.find((role) => role.id == 917521104908742736);
       const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);

@@ -7,6 +7,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client({partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 const prefix = '!';
 const swearwords = ["fuck", "shit", "asshole", "cunt", "bitch", "kurwa", "scheiße", "scheisse", "whore"]
+require("dotenv").config();
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./Commands').filter((file) => file.endsWith('.js'));
@@ -55,7 +56,10 @@ client.on('message', (message) => {
 
 	if (swearwords.some(word => message.toString().toLowerCase().includes(word)))
 	{
-		message.channel.send(`${message.author}, language.`);
+		if (message.member.roles.highest.position < (775432825872580649).position)
+		{
+			message.channel.send(`${message.author}, language.`);
+		}
 	};
 
         if (isNaN(message.content)) { //
@@ -75,7 +79,7 @@ client.on('message', (message) => {
         if (message.attachments.size > 0) {
                 if (message.attachments.every(attachIsImage))
 								{
-                	let imagememer = message.guild.roles.cache.find((role) => role.id == 559311593020588032);
+                		let imagememer = message.guild.roles.cache.find((role) => role.id == 559311593020588032);
                   	message.author.roles.add(imagememer);
                 }
         }
