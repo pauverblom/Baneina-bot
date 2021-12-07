@@ -24,7 +24,7 @@ module.exports = {
       if (!args[1])
         return message.channel.send('Please enter an amount of time (in seconds)')
 
-      if (user.roles.cache.has(muted_role))
+      if (user.roles.highest === muted_role)
         return message.channel.send('Provided member is already muted');
 
       let seconds = (args[1]);
