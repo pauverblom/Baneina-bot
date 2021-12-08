@@ -43,8 +43,8 @@ client.on('message', (message) => {
 			message.author.send('The #ñ channel is exclusively for ñ. DO NOT DO THAT AGAIN OR I WILL FIND YOU');
 		}
 	}
-	
-	if (message.member.roles.cache.some(role => role.id == 917521104908742736))
+
+	if (message.member.roles.cache.has('917521104908742736')
 	{
 	    	return message.delete();
 	}
