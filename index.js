@@ -44,7 +44,7 @@ client.on('message', (message) => {
 		}
 	}
 
-	if (message.author.roles.highest == 917521104908742736)
+	if (message.member.roles.highest == 917521104908742736)
 	{
 		message.author.send("You're muted lol.");
 	    	return message.delete();
