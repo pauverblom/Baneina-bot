@@ -14,9 +14,17 @@ module.exports = {
       {
 
         var user = message.mentions.members.first();
-        let role = message.guild.roles.cache.find((role) => role.id == 917521104908742736);
-        user.roles.remove(role);
-        message.channel.send(`${user} has been unmuted`);
+        let muted_role = message.guild.roles.cache.find((role) => role.id == 917521104908742736);
+
+        if (user.roles.highest == muted_role)
+        {
+          user.roles.remove(muted_role);
+          message.channel.send(`${user} has been unmuted`);
+        }
+        else
+        {
+          message.channel.send(`Bro, ${user} isn't muted lmaoooo`);
+        }
       }
     }
     else
