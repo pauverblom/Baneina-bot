@@ -44,7 +44,7 @@ client.on('message', (message) => {
 		}
 	}
 
-	if (message.member.roles.highest == 917521104908742736)
+	if (message.author.roles.highest == 917521104908742736)
 	{
 		message.author.send("You're muted lol.");
 	    	return message.delete();
@@ -135,7 +135,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
 client.on('guildMemberRemove', (member) => {
         const channel = member.guild.channels.cache.find(
-                (channel) => channel.id == 782674407713144842 //dock of shame
+                (channel) => channel.id == 782674407713144842 //dock of sham
         );
 
         const embed = new Discord.MessageEmbed()
