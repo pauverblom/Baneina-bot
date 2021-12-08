@@ -1,9 +1,10 @@
 module.exports = {
   name: 'unmute',
-  description: 'Unmute someone you want to mute (this will probably conflict with mute but who cares)',
+  description: 'Unmute someone you want to mute',
   async execute (message, args)
-  {
-    if (message.member.roles.highest.position >= (759034196235911210).position) //admin
+  { 
+    let admin_role = message.guild.roles.cache.find(role => role.id == 759034196235911210);
+    if (message.member.roles.highest.position >= admin_role.position) //admin
     {
       if (!message.mentions.members.size)
       {
