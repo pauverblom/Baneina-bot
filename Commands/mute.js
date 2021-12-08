@@ -12,7 +12,7 @@ module.exports = {
       if (!user)
         return message.channel.send(`You need to mention someone in order to mute them`);
 
-      if (user === message.author)
+      if (user === message.member)
         return message.channel.send('You cannot mute yourself');
 
       if (user === message.guild.me)
