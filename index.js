@@ -44,7 +44,7 @@ client.on('message', (message) => {
 		}
 	}
 
-	if (message.member.roles.highest == 917521104908742736))
+	if (message.member.roles.highest == 917521104908742736)
 	{
 		message.author.send("You're muted lol.");
 	    	return message.delete();
@@ -56,8 +56,9 @@ client.on('message', (message) => {
 	}
 
 	if (swearwords.some(word => message.toString().toLowerCase().includes(word)))
-	{
-		if (message.member.roles.highest.position < (775432825872580649).position)
+	{	
+		let admin_role = message.guild.roles.cache.find(role => role.id == 759034196235911210);
+   			if (message.member.roles.highest.position < admin_role.position) //admin
 		{
 			message.channel.send(`${message.author}, language.`);
 		}
@@ -79,24 +80,26 @@ client.on('message', (message) => {
         //Give image memer role
         if (message.attachments.size > 0) {
                 if (message.attachments.every(attachIsImage))
-								{
-                		let imagememer = message.guild.roles.cache.find((role) => role.id == 559311593020588032);
+		{
+                	let imagememer = message.guild.roles.cache.find((role) => role.id == 559311593020588032);
                   	message.author.roles.add(imagememer);
                 }
         }
 
         if (message.content.startsWith(prefix))
-		{
-			const args = message.content.slice(prefix.length).trim().split(/ +/);
-            const command = args.shift().toLowerCase();
-            if (!client.commands.has(command)) return;
+	{
+		const args = message.content.slice(prefix.length).trim().split(/ +/);
+		const command = args.shift().toLowerCase();
+		if (!client.commands.has(command)) return;
 
-			try
-			{
-				client.commands.get(command).execute(message, args);
-                } catch (error) {
+		try
+		{
+			client.commands.get(command).execute(message, args);
+                }
+		catch (error) 
+		{
                  console.error(error);
-             }
+             	}
         }
 
 	if (message.content.toLowerCase() === 'am i god?')
