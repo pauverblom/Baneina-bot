@@ -47,7 +47,7 @@ client.on('message', (message) => {
 	if (message.member.roles.highest == 917521104908742736)
 	{
 		message.author.send("You're muted lol.");
-	    	return message.delete();
+	    	message.delete();
 	}
 
 	if (message.content.toLowerCase().includes('earth is flat'))
