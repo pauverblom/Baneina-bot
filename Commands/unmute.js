@@ -2,7 +2,7 @@ module.exports = {
   name: 'unmute',
   description: 'Unmute someone you want to mute',
   async execute (message, args)
-  { 
+  {
     let admin_role = message.guild.roles.cache.find(role => role.id == 759034196235911210);
     if (message.member.roles.highest.position >= admin_role.position) //admin
     {
@@ -23,5 +23,5 @@ module.exports = {
     {
       message.channel.send('You cannot unmute lol');
     }
-  },
+  }
 };

@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+
 module.exports = {
   name: 'avatar',
   description: 'send the avatar',
@@ -10,10 +11,10 @@ module.exports = {
       message.channel.send(embed1);
     } else {
       var user = message.mentions.users.first();
-      const embed2 = new Discord.MessageEmbed().setImage(
-        user.displayAvatarURL()
+      const embed2 = new Discord.MessageEmbed()
+      .setImage(user.displayAvatarURL()
       );
       message.channel.send(embed2);
     }
-  },
+  }
 };

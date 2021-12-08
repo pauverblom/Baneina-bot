@@ -5,5 +5,5 @@ module.exports = {
     message.reply(
       "SUBSCRIBE TO MY CHANNEL https://www.youtube.com/channel/UCHDfM2CVCqRR5XhncqNgcuw?sub_confirmation=1"
     );
-  },
+  }
 };

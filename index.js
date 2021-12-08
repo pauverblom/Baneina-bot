@@ -48,16 +48,16 @@ client.on('message', (message) => {
 	{
 	    	return message.delete();
 	}
-	
+
 	if (message.content.toLowerCase().includes('earth is flat'))
 	{
 		message.channel.send(`${message.author}, your brain is flat.`);
 	}
 
 	if (swearwords.some(word => message.toString().toLowerCase().includes(word)))
-	{	
+	{
 		let admin_role = message.guild.roles.cache.find(role => role.id == 759034196235911210); //admin
-   			if (message.member.roles.highest.position < admin_role.position) 
+   			if (message.member.roles.highest.position < admin_role.position)
 		{
 			message.channel.send(`${message.author}, language.`);
 		}
@@ -95,7 +95,7 @@ client.on('message', (message) => {
 		{
 			client.commands.get(command).execute(message, args);
                 }
-		catch (error) 
+		catch (error)
 		{
                  console.error(error);
              	}
@@ -143,7 +143,7 @@ client.on('guildMemberRemove', (member) => {
                 .setDescription(
                         `${member} has been eliminated and sent to the dock of shame`
                 )
-                .setImage('https://i.postimg.cc/qMB7Vxnv/Dock-of-shame.jpg');
+
 
         channel.send(embed);
 });
