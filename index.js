@@ -43,10 +43,11 @@ client.on('message', (message) => {
 			message.author.send('The #ñ channel is exclusively for ñ. DO NOT DO THAT AGAIN OR I WILL FIND YOU');
 		}
 	}
-
-	if (true) //message.member.roles.highest() == 917521104908742736
+	
+	let muted_role = message.guild.roles.cache.find((role) => role.id == 917521104908742736);
+	if (message.member.roles.highest == muted_role)
 	{
-		//message.author.send("You're muted lol.");
+		message.author.send("You're muted lol.");
 	    	message.delete();
 	}
 
