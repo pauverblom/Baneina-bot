@@ -46,7 +46,8 @@ client.on('message', (message) => {
 
 	if (message.member.roles.cache.some(role => role.id == 917521104908742736))
 	{
-	    message.delete();
+		message.author.send("You're muted lol.");
+	    	return message.delete();
 	}
 
 	if (message.content.toLowerCase().includes('earth is flat'))
