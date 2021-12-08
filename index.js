@@ -44,9 +44,9 @@ client.on('message', (message) => {
 		}
 	}
 
-	if (message.member.roles.highest == 917521104908742736)
+	if (true) //message.member.roles.highest() == 917521104908742736
 	{
-		message.author.send("You're muted lol.");
+		//message.author.send("You're muted lol.");
 	    	message.delete();
 	}
 
@@ -57,8 +57,8 @@ client.on('message', (message) => {
 
 	if (swearwords.some(word => message.toString().toLowerCase().includes(word)))
 	{	
-		let admin_role = message.guild.roles.cache.find(role => role.id == 759034196235911210);
-   			if (message.member.roles.highest.position < admin_role.position) //admin
+		let admin_role = message.guild.roles.cache.find(role => role.id == 759034196235911210); //admin
+   			if (message.member.roles.highest.position < admin_role.position) 
 		{
 			message.channel.send(`${message.author}, language.`);
 		}
