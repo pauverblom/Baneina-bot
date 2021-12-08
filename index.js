@@ -43,18 +43,9 @@ client.on('message', (message) => {
 			message.author.send('The #ñ channel is exclusively for ñ. DO NOT DO THAT AGAIN OR I WILL FIND YOU');
 		}
 	}
-	/*
-	let muted_role = message.guild.roles.cache.find((role) => role.id == 917521104908742736);
-	if (message.member.roles.highest == muted_role)
-	{
-		message.author.send("You're muted lol.");
-	    	message.delete();
-	}
-	*/
 	
 	if (message.member.roles.cache.some(role => role.id == 917521104908742736))
 	{
-		message.member.send("You're muted lol.");
 	    	return message.delete();
 	}
 	
@@ -90,7 +81,7 @@ client.on('message', (message) => {
                 if (message.attachments.every(attachIsImage))
 		{
                 	let imagememer = message.guild.roles.cache.find((role) => role.id == 559311593020588032);
-                  	message.author.roles.add(imagememer);
+                  	message.member.roles.add(imagememer);
                 }
         }
 
@@ -143,7 +134,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
 client.on('guildMemberRemove', (member) => {
         const channel = member.guild.channels.cache.find(
-                (channel) => channel.id == 782674407713144842 //dock of sham
+                (channel) => channel.id == 782674407713144842 //dock of shame
         );
 
         const embed = new Discord.MessageEmbed()
