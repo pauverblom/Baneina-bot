@@ -44,7 +44,7 @@ client.on('message', (message) => {
 		}
 	}
 
-	if (message.member.roles.cache.has('917521104908742736')
+	if (message.member.roles.cache.has('917521104908742736'))
 	{
 	    	return message.delete();
 	}
