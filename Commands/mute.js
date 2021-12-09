@@ -35,7 +35,7 @@ module.exports = {
       if (!seconds || seconds > 1209600) // Cap at 14 days, larger than 24.8 days causes integer overflow
       return message.channel.send('Please enter an amount of time smaller than 1209600');
 
-      let reason = args.slice(2).join(' ');
+      let reason = args.slice(2).join('` `');
       if (!reason) reason = '`None Provided`';
       if (reason.length > 1024) reason = reason.slice(0, 1021) + '...';
 
