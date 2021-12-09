@@ -116,36 +116,22 @@ client.on('message', (message) => {
 
 //Welcoming
 client.on('guildMemberAdd', (member) => {
-        const channel = member.guild.channels.cache.find((ch) => ch.id == 552852895704547328); //welcoming channel
-        channel.send(`Welcome to the server, ${member}. IMPORTANT!! Accept the #rules-📜 by reacting to the message to enter the server. Subscribe to my channel! https://www.youtube.com/c/baneina`
- 	);
+	const newbie_role = member.guild.roles.cache.find((role) => role.id == 539113230581104644);
+  const channel = member.guild.channels.cache.find((ch) => ch.id == 552852895704547328); //welcoming channel
+
+	channel.send(`Welcome to the server, ${member}. Accept the rules to gain access to the server, and subscribe to my channel! https://www.youtube.com/c/baneina`);
+	member.roles.add(newbie_role);
 });
 
-
-client.on('messageReactionAdd', async (reaction, user) => {
-        if (reaction.message.channel.id == 778542590592679967) //rules channel
-        {
-			let member = reaction.message.guild.members.cache.get(user.id);
-        	const role = reaction.message.guild.roles.cache.find((role) => role.id == 539113230581104644); //Starter role (Lvl 1 Crook ATM)
-            member.roles.add(role);
-        }
-});
 
 
 client.on('guildMemberRemove', (member) => {
-        const channel = member.guild.channels.cache.find(
-                (channel) => channel.id == 782674407713144842 //dock of shame
-        );
-
-        const embed = new Discord.MessageEmbed()
-                .setColor('#FF0000')
-                .setTitle('Dock of Shame')
-                .setDescription(
-                        `${member} has been eliminated and sent to the dock of shame`
-                )
-
-
-        channel.send(embed);
+	const channel = member.guild.channels.cache.find((channel) => channel.id == 782674407713144842); //dock of shame
+  const embed = new Discord.MessageEmbed()
+    .setColor('#FF0000')
+    .setTitle('Dock of Shame')
+    .setDescription(`${member} has been eliminated and sent to the dock of shame`)
+		channel.send(embed);
 });
 
 client.login(process.env.TOKEN);
