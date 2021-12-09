@@ -35,6 +35,10 @@ client.on('ready', () => {
 //Message Sent
 client.on('message', (message) => {
 
+	if (message.guild === null)
+	{
+		return;
+	}
 	if (message.channel.id == 881158694396633108)
 	{
 		if (!message.content.toLowerCase().includes('ñ'))
@@ -43,11 +47,11 @@ client.on('message', (message) => {
 			message.author.send('The #ñ channel is exclusively for ñ. DO NOT DO THAT AGAIN OR I WILL FIND YOU');
 		}
 	}
-	const mute_role = message.guild.roles.cache.find(role => role.id == 917521104908742736);
 	
-	if(message.member.roles.highest === mute_role) 
+	if (message.member.roles.cache.has('917521104908742736')) //muted role
 	{
-  		return message.delete();
+        	return message.delete();
+		message.author.send("You're muted lmaoooo");
 	}
 
 	if (message.content.toLowerCase().includes('earth is flat'))
