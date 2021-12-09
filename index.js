@@ -44,10 +44,9 @@ client.on('message', (message) => {
 		}
 	}
 
-	if(message.member?.roles.cache.has('917521104908742736')) 
-	{
-  		return message.delete();
-	}
+if(message.member?.roles.cache.has('917521104908742736')) {
+  return message.delete();
+}
 
 	if (message.content.toLowerCase().includes('earth is flat'))
 	{
