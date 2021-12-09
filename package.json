@@ -16,6 +16,6 @@
     "express": "^4.17.1",
     "package": "^1.0.1",
     "request": "^2.88.2",
-    "string-progressbar": "^1.0.4"
+    "string-progressbar": "1.0.4"
   }
 }
