@@ -40,7 +40,7 @@ module.exports = {
       if (reason.length > 1024) reason = reason.slice(0, 1021) + '...';
 
       user.roles.add(muted_role);
-      message.channel.send(user + " has been muted for " + seconds + "seconds, or " + minutes.toFixed(2) + " minutes, or " + hours.toFixed(1) " hours lol.\n\nReason: `" + reason + "`");
+      message.channel.send(user + " has been muted for " + seconds + "seconds, or " + minutes.toFixed(2) + " minutes, or " + hours.toFixed(1) + " hours lol.\n\nReason: `" + reason + "`");
 
       user.timeout = message.client.setTimeout(async () => {
         try {
