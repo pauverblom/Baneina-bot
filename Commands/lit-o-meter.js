@@ -9,7 +9,7 @@ module.exports = {
     {
       var percentaje = 100;
       let bar = progressbar.filledBar(total, percentaje, 15);
-      message.channel.send("You are 100% lit, boss\n" + bar);
+      message.channel.send("You are 100% lit, boss 🔥\n" + bar);
     }
     else
     {
