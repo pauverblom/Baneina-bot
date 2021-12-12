@@ -132,10 +132,12 @@ client.on('guildMemberAdd', (member) => {
 client.on('guildMemberRemove', (member) => {
 	const channel = member.guild.channels.cache.find((channel) => channel.id == 782674407713144842); //dock of shame
   const embed = new Discord.MessageEmbed()
-    .setColor('#FF0000')
-    .setTitle('Dock of Shame')
-    .setDescription(`${member} has been eliminated and sent to the dock of shame`)
-		channel.send(embed);
+  	.setColor('#FF0000')
+  	.setTitle('Dock of Shame')
+  	.setDescription(`${member} has been eliminated and sent to the dock of shame`)
+  	.setImage('https://i.postimg.cc/qMB7Vxnv/Dock-of-shame.jpg');
+		
+	channel.send(embed);
 });
 
 client.login(process.env.TOKEN);
