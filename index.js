@@ -36,12 +36,11 @@ client.on('ready', () => {
 });
 
 client.on('ready', async client => {
-    setInterval(await statuscheck(client), 10000); // runs the check funtion evrey 10s to keep up to date
+    setInterval(statuscheck(client), 10000); // runs the check funtion evrey 10s to keep up to date
 });
 
-async function statuscheck() {
+function statuscheck() {
 	console.log('set'); // /So I know the timer works
-	return {0};
 }
 
 //Message Sent
