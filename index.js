@@ -31,6 +31,23 @@ client.on('ready', () => {
         console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on('ready', async client => {
+    setInterval(await statuscheck(client), 10000); // runs the check funtion evrey 10s to keep up to date
+});
+
+async function statuscheck() {
+    const statusArray = {};
+    await client.guilds.array().forEach(async g => {
+        const status = [];
+        await g.members.array().forEach(m => {
+            status.push(m.user.presence.status);
+        });
+        statusArray[g.id] = status;
+    });
+    console.log('set'); // /So I know the timer works
+    return statusArray;
+}
+
 //Message Sent
 client.on('message', (message) => {
 
