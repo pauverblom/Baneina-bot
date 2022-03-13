@@ -34,7 +34,7 @@ client.on('ready', () => {
 });
         console.log(`Logged in as ${client.user.tag}!`);
 	
-	setInterval(statuscheck(), 10000); // runs the check funtion evrey 10s to keep up to date
+	setInterval(statuscheck, 10000); // runs the check funtion evrey 10s to keep up to date
 });
 
 //client.on('ready', async client => {
@@ -43,7 +43,6 @@ client.on('ready', () => {
 
 function statuscheck() {
 	console.log('set'); // /So I know the timer works
-	return;
 }
 
 //Message Sent
