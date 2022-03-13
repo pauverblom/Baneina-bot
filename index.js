@@ -41,7 +41,6 @@ client.on('ready', async client => {
 
 async function statuscheck() {
     console.log('set'); // /So I know the timer works
-    return 0;
 }
 
 //Message Sent
