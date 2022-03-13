@@ -47,12 +47,6 @@ client.on('message', (message) => {
 		}
 	}
 
-	if (message.member.roles.cache.has('917521104908742736')) //muted role
-	{
-		message.author.send("You're muted lmaoooo");
-        	return message.delete();
-	}
-
 	if (message.content.toLowerCase().includes('earth is flat'))
 	{
 		message.channel.send(`${message.author}, your brain is flat.`);
