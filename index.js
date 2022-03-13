@@ -33,7 +33,8 @@ client.on('ready', () => {
  		url: "https://www.youtube.com/c/baneina"
 });
         console.log(`Logged in as ${client.user.tag}!`);
-	setInterval(statuscheck(client), 10000); // runs the check funtion evrey 10s to keep up to date
+	
+	setInterval(statuscheck(), 10000); // runs the check funtion evrey 10s to keep up to date
 });
 
 //client.on('ready', async client => {
