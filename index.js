@@ -28,6 +28,10 @@ function attachIsImage(msgAttach)
 //I'm Ready :)
 
 client.on('ready', () => {
+	client.user.setActivity("Help me", {
+		type: "WATCHING",
+ 		url: "https://www.youtube.com/c/baneina"
+});
         console.log(`Logged in as ${client.user.tag}!`);
 });
 
@@ -36,14 +40,6 @@ client.on('ready', async client => {
 });
 
 async function statuscheck() {
-    const statusArray = {};
-    await client.guilds.array().forEach(async g => {
-        const status = [];
-        await g.members.array().forEach(m => {
-            status.push(m.user.presence.status);
-        });
-        statusArray[g.id] = status;
-    });
     console.log('set'); // /So I know the timer works
     return statusArray;
 }
