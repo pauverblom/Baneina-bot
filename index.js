@@ -40,7 +40,7 @@ client.on('ready', () => {
 		type: "WATCHING",
  		url: "https://www.youtube.com/c/baneina"
 });
-        console.log(`BANEINA DENTRO PUTASSS`);
+        console.log(`BANEINA DENTRO PUTAAAAAAAAAA`);
 	
 	//setInterval(statuscheck, 10000); // runs the check funtion evrey 10s to keep up to date
 });
