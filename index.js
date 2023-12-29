@@ -33,29 +33,19 @@ function attachIsImage(msgAttach)
 	return (url.indexOf('jpg' | 'png' | 'jpeg', url.length - ('jpg' | 'png' | 'jpeg').length) !== -1); //return true if it's an image
 }
 
-//I'm Ready :)
 
 client.on('ready', () => {
 	client.user.setActivity("Help me", {
 		type: "WATCHING",
  		url: "https://www.youtube.com/c/baneina"
-});
-        console.log(`BANEINA DENTRO, A ESTUDIAR`);
+	});
+
+	const testingbotchannel = client.channels.cache.get('559312894815240202');
+	testingbotchannel.send(`BANEINA'S SLAVE UPDATED`);
 	
-	//setInterval(statuscheck, 10000); // runs the check funtion evrey 10s to keep up to date
 });
 
-//client.on('ready', async client => {
-    
-//});
 
-/*function statuscheck() {
-	
-	guild.members.user.find
-	console.log('check'); // /So I know the timer works
-}
-*/
-//Message Sent
 client.on('message', (message) => {
 
 	if (message.guild === null)
