@@ -25,7 +25,7 @@ for (const file of commandFiles)
 	client.commands.set(command.name, command);
 }
 
-//declare functions
+//declare useful functions
 
 function attachIsImage(msgAttach)
 {
