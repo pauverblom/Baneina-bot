@@ -13,7 +13,7 @@ partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES],
 });
 const prefix = '!';
-const swearwords = ["fuck", "shit", "asshole", "cunt", "bitch", "kurwa", "scheiße", "scheisse", "whore","nigga","nigger"];
+const swearwords = ["fuck", "shit", "asshole", "cunt", "bitch", "kurwa", "scheiße", "scheisse", "whore","nigga","nigger", "fag", "faggot"];
 
 client.commands = new Discord.Collection();
 
