@@ -62,7 +62,7 @@ client.on('message', (message) => {
 		}
 	}
 
-	if (message.content.toLowerCase().includes('earth is flat') || message.content.toLowerCase().includes("earth's flat'")
+	if (message.content.toLowerCase().includes('earth is flat') || message.content.toLowerCase().includes("earth's flat"))
 	{
 		message.channel.send(`${message.author}, your brain is flat.`);
 	}
