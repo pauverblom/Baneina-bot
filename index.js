@@ -13,7 +13,8 @@ partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES],
 });
 const prefix = '!';
-const swearwords = ["fuck", "shit", "asshole", "cunt", "bitch", "kurwa", "scheiße", "scheisse", "whore","nigga","nigger", "fag", "faggot"];
+const swearwords = ["fuck", "shit", "asshole", "cunt", "bitch", "kurwa", "scheiße", "scheisse", "whore"];
+const hardswearwords = ["nigga","nigger", "fag", "faggot"];
 
 client.commands = new Discord.Collection();
 
@@ -61,7 +62,7 @@ client.on('message', (message) => {
 		}
 	}
 
-	if (message.content.toLowerCase().includes('earth is flat'))
+	if (message.content.toLowerCase().includes('earth is flat') || message.content.toLowerCase().includes("earth's flat'")
 	{
 		message.channel.send(`${message.author}, your brain is flat.`);
 	}
@@ -73,6 +74,12 @@ client.on('message', (message) => {
 		{
 			message.channel.send(`${message.author}, language.`);
 		}
+	};
+
+	if (hardswearwords.some(word => message.toString().toLowerCase().includes(word)))
+	{
+		message.channel.send(`${message.author} that word is not permitted. You will be banned if you continue using it.`);
+		message.delete();
 	};
 
         if (isNaN(message.content)) { //
