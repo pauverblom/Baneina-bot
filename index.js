@@ -14,7 +14,7 @@ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES],
 });
 const prefix = '!';
 const swearwords = ["fuck", "shit", "asshole", "cunt", "bitch", "kurwa", "scheiße", "scheisse", "whore"];
-const hardswearwords = ["nigga","nigger", "fag", "faggot"];
+const hardswearwords = ["nigga","nigger", "fag", "faggot","niggas","niggers","n!gga","n!gger","n!ggas","n!ggers","n8gger","n8gga","n8ggas","n8ggers"];
 
 client.commands = new Discord.Collection();
 
