@@ -78,7 +78,7 @@ client.on('message', (message) => {
 
 	if (hardswearwords.some(word => message.toString().toLowerCase().includes(word)))
 	{
-		message.channel.send(`${message.author} that word is not permitted. You will be banned if you continue using it.`);
+		message.author.send(`${message.author} that word is not permitted. You will be banned if you continue using it.`);
 		message.delete();
 	};
 
