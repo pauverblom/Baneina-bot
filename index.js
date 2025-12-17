@@ -3,8 +3,7 @@
 const fs = require("fs");
 const Discord = require("discord.js");
 
-const config = require("./config.json");
-const token = config.token;
+const token = process.env.DISCORD_TOKEN;
 
 const client = new Discord.Client({
 partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
